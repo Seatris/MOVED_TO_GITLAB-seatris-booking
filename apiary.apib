@@ -7,7 +7,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 # GET /restaurants/{restaurant_id}
 + Parameters
-    + restaurant_id (string) - ID of the Restaurant in the form of a slug
+    + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
 
 + Response 200 (application/json)
 
@@ -43,8 +43,8 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 # GET /restaurants/{restaurant_id}/dates
 + Parameters
-    + restaurant_id (string) - ID of the Restaurant in the form of a slug
-    + persons (number) - the number of persons
+    + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
+    + persons (number, required) - the number of persons
 
 + Response 200 (application/json)
 
@@ -54,31 +54,24 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 # GET /restaurants/{restaurant_id}/slots
 + Parameters
-    + restaurant_id (string) - ID of the Restaurant in the form of a slug
-    + persons (number) - the number of persons
+    + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
+    + persons (number, required) - the number of persons
 + Response 200 (application/json)
 
             {
               "foo": "bar"
             }
-# Group Bookings
 
-Resources related to bookings in the API.
 
-# POST restaurants/{restaurant_id}/bookings/create
-A reservation is done by creating a booking
+# POST /restaurants/{restaurant_id}/bookings/create
 
 + Parameters
-    + restaurant_id (string) - ID of the Restaurant in the form of a slug
-    + locale (string) - the locale (de or en)
+    + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
+    + locale (string, required) - the locale (de or en)
 
 + Request (application/json)
-    + Headers
-            Accept: application/json
 
-    + Body
-
-            {
+        {
               "persons": 2,
               "user[firstname]": "Martin",
               "user[lastname]": "Wöginger",
