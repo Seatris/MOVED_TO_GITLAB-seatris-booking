@@ -45,7 +45,15 @@ Seatris Guest Booking is an API allowing users to make reservations
 + Parameters
     + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
     + persons (number, required) - the number of persons
+    + start_date (string, required) - Date in form of 'YY-MM-DD' to start the search
+    + end_date (string, required) - Date in form of 'YY-MM-DD' where search ends
 
++ Request (application/json)
+
+            {
+              "start_date": "2018-08-01",
+              "end_date": "2018-08-31"
+            }
 + Response 200 (application/json)
 
             {
