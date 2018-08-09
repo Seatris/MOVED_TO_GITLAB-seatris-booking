@@ -28,6 +28,17 @@ Seatris Guest Booking is an API allowing users to make reservations
 + booking_time_in_advance_minutes (number) - how many minutes a booking must be done before shift begin, -1 if there is no limit
 
 
+## User (object)
+
++ firstname (string) - Firstname of user
++ lastname (string) - Lastname of user
++ email (string) - eMail of user
++ gender (string) - gender "male" or "female"
++ phone (string) - phone number of user
++ restrictions (string) - Comma seperated list of restrictions
++ restaurant_newsletter (boolean) - User wants a newsletter send
+
+
 # GET /restaurants/{restaurant_id}
 + Parameters
     + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
@@ -109,7 +120,7 @@ Seatris Guest Booking is an API allowing users to make reservations
     + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
     + locale (string, required) - the locale (de or en)
     + persons (number, required) - How many persons
-    + user (user, required) - The first name of the main person
+    + user (User, required) - The first name of the main person
 
 + Request (application/json)
 
