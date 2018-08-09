@@ -1,55 +1,104 @@
 FORMAT: 1A
-HOST: https://bookings-api.seatris.com/
-# Seatris Guest Booking
+HOST: https://api-bookings.seatris.com/
 
+# Seatris Guest Booking
 Seatris Guest Booking is an API allowing users to make reservations
 
-# Group Restaurants
 
-Resources related to restaurants in the API.
-
-## Retrieve Restaurant Info [GET]
-## Restaurant [/restaurants/{restaurant_id}]
+# GET /restaurants/{restaurant_id}
 + Parameters
-    + restaurant_id (number) - ID of the Restaurant in the form of an integer
+    + restaurant_id (string) - ID of the Restaurant in the form of a slug
 
 + Response 200 (application/json)
-      {
-        id: 1391,
-        shifts: [{"id":51,"name":"Demo"}],
-        floors: [{"id":0,"name":"all_floors"}],
-        askForPreferences: true,
-        shiftTemplates:
-          [
+
             {
-              "id":230,
-              "floor_id":35,
-              "name":"Dinner",
-              "noshow_fee_currency":"EUR",
-              "noshow_fee_cents":4000,
-              "cancellation_limit_text":"15:00 am Tag der Buchung",
-              "cancellation_limit_for_groups_text":"14:00 am Tag vor der Buchung",
-              "booking_time_in_advance_minutes":-1
-            },
-            {
-              "id":236,
-              "floor_id":35,
-              "name":"Dinner Di-Do",
-              "noshow_fee_currency":"EUR",
-              "noshow_fee_cents":0,
-              "cancellation_limit_text":"15 Uhr am Tag der Reservierung",
-              "cancellation_limit_for_groups_text":"",
-              "booking_time_in_advance_minutes":-1
+              "id": 1391,
+              "shifts": [{"id":51,"name":"Demo"}],
+              "floors": [{"id":0,"name":"all_floors"}],
+              "askForPreferences": true,
+              "shiftTemplates":
+              [
+                {
+                  "id": 230,
+                  "floor_id": 35,
+                  "name": "Dinner",
+                  "noshow_fee_currency": "EUR",
+                  "noshow_fee_cents": 4000,
+                  "cancellation_limit_text": "15:00 am Tag der Buchung",
+                  "cancellation_limit_for_groups_text": "14:00 am Tag vor der Buchung",
+                  "booking_time_in_advance_minutes": -1
+                },
+                {
+                  "id":236,
+                  "floor_id":35,
+                  "name":"Dinner Di-Do",
+                  "noshow_fee_currency":"EUR",
+                  "noshow_fee_cents":0,
+                  "cancellation_limit_text":"15 Uhr am Tag der Reservierung",
+                  "cancellation_limit_for_groups_text":"",
+                  "booking_time_in_advance_minutes":-1
+                }
+              ]
             }
-          ]
-        }
 
+# GET /restaurants/{restaurant_id}/dates
++ Parameters
+    + restaurant_id (string) - ID of the Restaurant in the form of a slug
+    + persons (number) - the number of persons
 
-## Group Bookings
++ Response 200 (application/json)
+
+            {
+              "foo": "bar"
+            }
+
+# GET /restaurants/{restaurant_id}/slots
++ Parameters
+    + restaurant_id (string) - ID of the Restaurant in the form of a slug
+    + persons (number) - the number of persons
++ Response 200 (application/json)
+
+            {
+              "foo": "bar"
+            }
+# Group Bookings
 
 Resources related to bookings in the API.
 
 ### Create a New Booking [POST]
 A reservation is done by creating a booking
+https://bookings.seatris.com/restaurants/demo/bookings/create?locale=d
 
 + Request (application/json)
+    + Headers
+            Accept: application/json
+
+    + Body
+
+            {
+              "persons": 2,
+              "user[firstname]": "Martin",
+              "user[lastname]": "Wöginger",
+              "user[email]": "woeginger@exasoft.net",
+              "user[gender]": "male",
+              "user[phone]": "+491792404436",
+              "user[restrictions]": "Veganer",
+              "user[restaurant_newsletter]": true,
+              "date": "2018-08-16",
+              "time": "20:15",
+              "sessionid": "f37681588d198288dec3bfd0ed",
+              "isRequest": false,
+              "shiftId": 193304,
+              "cancel_limit": "10:00 Uhr am Tag vor der Buchung",
+              "noshow_fee": "EUR 10",
+              "notes_by_guest": "These are my notes"
+          }
++ Response 200 (application/json)
+
+    + Body
+
+            {
+              "success":true,
+              "id":110504,
+              "cancellation_token":"mut6FvW1pQtzwXYpeVsQ"
+            }
