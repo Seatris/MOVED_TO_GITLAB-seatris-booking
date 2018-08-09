@@ -8,13 +8,24 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 ## Shift (object)
 
-+ id (number) - id of shift
++ id (number) - Id of shift
 + name (string) - Name of shift
 
 ## Floor (object)
 
-+ id (number) - id of floor
++ id (number) - Id of floor
 + name (string) - Name of floor
+
+## Shifttemplate (object)
+
++ id (number) - Id of template
++ floor_id (number) - Id of floor
++ name (string) - Name of template
++ noshow_fee_currency (string) - Currency for noshow fee
++ noshow_fee_cents (number) - Amount for noshow fee (in cents)
++ cancellation_limit_text (string) - Hint text for cancellations
++ cancellation_limit_for_groups_text (string) - Hint text for cancellations for groups
++ booking_time_in_advance_minutes (number) - how many minutes a booking must be done before shift begin, -1 if there is no limit
 
 
 # GET /restaurants/{restaurant_id}
@@ -28,6 +39,7 @@ Seatris Guest Booking is an API allowing users to make reservations
         + shifts: [{"id":51,"name":"Demo"}] (array[Shift]) - Array of Shifts
         + floors: [{"id":0,"name":"all_floors"}] (array[Floor]) - Array of Floors
         + askForPreferences: true (boolean) - User should be asked for preferences
+        + shiftTemplates (array[Shifttemplate]) - Array of Shifttemplates
 
     + Body
 
