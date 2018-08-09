@@ -65,9 +65,12 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 Resources related to bookings in the API.
 
-### Create a New Booking [POST]
+# POST restaurants/{restaurant_id}/bookings/create
 A reservation is done by creating a booking
-https://bookings.seatris.com/restaurants/demo/bookings/create?locale=d
+
++ Parameters
+    + restaurant_id (string) - ID of the Restaurant in the form of a slug
+    + locale (string) - the locale (de or en)
 
 + Request (application/json)
     + Headers
