@@ -48,6 +48,26 @@ Seatris Guest Booking is an API allowing users to make reservations
         + id: 1391 (number)
         + shifts: [{"id":51,"name":"Demo"}] (array[Shift]) - Array of Shifts
         + floors: [{"id":0,"name":"all_floors"}] (array[Floor]) - Array of Floors
+        + prefered_locale: "en" (string) - The prefered locale
+        + phone_prefix_code: "+49" (string)
+        + guest_notes_for_booking_page: "<div style="text-align:center">"Our Mission" is to feed you great food.</div>" (string)
+        + guest_notes_for_payment_page: "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details." (string)
+        + payment_provider: "adyen" (string)
+        + checkout_image_url:  "https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg" (string)
+        + welcome_image_url: "https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg" (string)
+        + address_line: "Borsigstraße 9, 10115, Berlin, Germany" (string)
+        + conversion_tracking_url: "http://www.example.com" (string)
+        + privacy_policy_url: "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf" (string) - URL to the privacy policy document in Guest-Bookings
+        + max_party_size: 7 (number)
+        + guest_booking_starting_from_hint: "We are taking online bookings for June onwards" (string)
+        + Name: "Demo" (string)
+        + city: "Berlin" (string)
+        + languages: ["DE", "EN"] (array[string])
+        + phone: "+49 - 30 814540400" (string)
+        + twitter: "https://twitter.com/SeatrisTeam" (string)
+        + facebook: "https://www.facebook.com/seatris/" (string)
+        + instagram "https://www.facebook.com/seatris/" (string)
+        + email: "sales@seatris.com" (string)
         + askForPreferences: true (boolean) - User should be asked for preferences
         + shiftTemplates (array[Shifttemplate]) - Array of Shifttemplates
 
@@ -55,6 +75,26 @@ Seatris Guest Booking is an API allowing users to make reservations
 
             {
               "id": 1391,
+              "prefered_locale": "de",
+              "phone_prefix_code": "+49",
+              "guest_notes_for_booking_page": "<div style='text-align:center'>Our Mission is to feed you great food.</div>",
+              "guest_notes_for_payment_page": "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.",
+              "payment_provider": "adyen",
+              "checkout_image_url":"https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg",
+              "welcome_image_url":"https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg",
+              "address_line": "Borsigstraße 9, 10115, Berlin, Germany",
+              "conversion_tracking_url": "http://www.example.com",
+              "privacy_policy_url": "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf",
+              "max_party_size": 7,
+              "guest_booking_starting_from_hint": "We are taking online bookings for June onwards",
+              "name": "Demo",
+              "city": "Berlin",
+              "languages": ["DE", "EN"],
+              "phone": "+49 - 30 814540400",
+              "twitter": "https://twitter.com/SeatrisTeam",
+              "facebook": "https://www.facebook.com/seatris/",
+              "instagram" "https://www.facebook.com/seatris/",
+              "email": "sales@seatris.com",
               "shifts": [{"id":51,"name":"Demo"}],
               "floors": [{"id":0,"name":"all_floors"}],
               "askForPreferences": true,
