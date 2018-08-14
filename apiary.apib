@@ -27,7 +27,6 @@ Seatris Guest Booking is an API allowing users to make reservations
 + cancellation_limit_for_groups_text (string) - Hint text for cancellations for groups
 + booking_time_in_advance_minutes (number) - how many minutes a booking must be done before shift begin, -1 if there is no limit
 
-
 ## User (object)
 
 + firstname (string) - Firstname of user
@@ -95,7 +94,8 @@ Seatris Guest Booking is an API allowing users to make reservations
 
             {
               "start_date": "2018-08-01",
-              "end_date": "2018-08-31"
+              "end_date": "2018-08-31",
+              "persons": 3
             }
 + Response 200 (application/json)
 
