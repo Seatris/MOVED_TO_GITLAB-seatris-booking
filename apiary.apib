@@ -219,6 +219,8 @@ Seatris Guest Booking is an API allowing users to make reservations
 + Parameters
     + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
     + persons (number, required) - the number of persons
+    + shiftId (number, required) - Id of the shift
+
 + Response 200 (application/json)
 
     + Attributes (array)
@@ -226,7 +228,6 @@ Seatris Guest Booking is an API allowing users to make reservations
             + time: "12:00" (string) - time formated
             + shift_category_id: 3 (number)
             + available: true (boolean)
-
 
     + Body
 
