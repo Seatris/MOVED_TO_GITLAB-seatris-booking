@@ -19,13 +19,13 @@ Seatris Guest Booking is an API allowing users to make reservations
 ## Shifttemplate (object)
 
 + id (number) - Id of template
-+ floor_id (number) - Id of floor
++ floor-id (number) - Id of floor
 + name (string) - Name of template
-+ noshow_fee_currency (string) - Currency for noshow fee
-+ noshow_fee_cents (number) - Amount for noshow fee (in cents)
-+ cancellation_limit_text (string) - Hint text for cancellations
-+ cancellation_limit_for_groups_text (string) - Hint text for cancellations for groups
-+ booking_time_in_advance_minutes (number) - how many minutes a booking must be done before shift begin, -1 if there is no limit
++ noshow-fee-currency (string) - Currency for noshow fee
++ noshow-fee-cents (number) - Amount for noshow fee (in cents)
++ cancellation-limit-text (string) - Hint text for cancellations
++ cancellation-limit-for-groups-text (string) - Hint text for cancellations for groups
++ booking-time-in-advance-minutes (number) - how many minutes a booking must be done before shift begin, -1 if there is no limit
 
 ## User (object)
 
@@ -35,12 +35,12 @@ Seatris Guest Booking is an API allowing users to make reservations
 + gender (string) - gender "male" or "female"
 + phone (string) - phone number of user
 + restrictions (string) - Comma seperated list of restrictions
-+ restaurant_newsletter (boolean) - User wants a newsletter send
++ restaurant-newsletter (boolean) - User wants a newsletter send
 
 
-# GET /restaurants/{restaurant_id}
+# GET /restaurants/{slug}
 + Parameters
-    + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
+    + slug (string, required) - ID of the Restaurant in the form of a slug
 
 + Response 200 (application/json)
 
@@ -48,18 +48,18 @@ Seatris Guest Booking is an API allowing users to make reservations
         + id: 1391 (number)
         + shifts: [{"id":51,"name":"Demo"}] (array[Shift]) - Array of Shifts
         + floors: [{"id":0,"name":"all_floors"}] (array[Floor]) - Array of Floors
-        + prefered_locale: "en" (string) - The prefered locale
-        + phone_prefix_code: "+49" (string)
-        + guest_notes_for_booking_page: "<div style="text-align:center">"Our Mission" is to feed you great food.</div>" (string)
-        + guest_notes_for_payment_page: "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details." (string)
-        + payment_provider: "adyen" (string)
-        + checkout_image_url:  "https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg" (string)
-        + welcome_image_url: "https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg" (string)
-        + address_line: "Borsigstraße 9, 10115, Berlin, Germany" (string)
-        + conversion_tracking_url: "http://www.example.com" (string)
-        + privacy_policy_url: "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf" (string) - URL to the privacy policy document in Guest-Bookings
-        + max_party_size: 7 (number)
-        + guest_booking_starting_from_hint: "We are taking online bookings for June onwards" (string)
+        + prefered-locale: "en" (string) - The prefered locale
+        + phone-prefix-code: "+49" (string)
+        + guest-notes-for-booking-page: "<div style="text-align:center">"Our Mission" is to feed you great food.</div>" (string)
+        + guest-notes-for-payment-page: "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details." (string)
+        + payment-provider: "adyen" (string)
+        + checkout-image-url:  "https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg" (string)
+        + welcome-image-url: "https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg" (string)
+        + address-line: "Borsigstraße 9, 10115, Berlin, Germany" (string)
+        + conversion-tracking-url: "http://www.example.com" (string)
+        + privacy-policy-url: "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf" (string) - URL to the privacy policy document in Guest-Bookings
+        + max-party-size: 7 (number)
+        + guest-booking-starting-from-hint: "We are taking online bookings for June onwards" (string)
         + name: "Demo" (string)
         + city: "Berlin" (string)
         + languages: ["DE", "EN"] (array[string])
@@ -68,25 +68,25 @@ Seatris Guest Booking is an API allowing users to make reservations
         + facebook: "https://www.facebook.com/seatris/" (string)
         + instagram "https://www.facebook.com/seatris/" (string)
         + email: "sales@seatris.com" (string)
-        + askForPreferences: true (boolean) - User should be asked for preferences
-        + shiftTemplates (array[Shifttemplate]) - Array of Shifttemplates
+        + ask-for-preferences: true (boolean) - User should be asked for preferences
+        + shift-templates (array[Shifttemplate]) - Array of Shifttemplates
 
     + Body
 
             {
               "id": 1391,
-              "prefered_locale": "de",
-              "phone_prefix_code": "+49",
-              "guest_notes_for_booking_page": "<div style='text-align:center'>Our Mission is to feed you great food.</div>",
-              "guest_notes_for_payment_page": "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.",
-              "payment_provider": "adyen",
-              "checkout_image_url":"https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg",
-              "welcome_image_url":"https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg",
-              "address_line": "Borsigstraße 9, 10115, Berlin, Germany",
-              "conversion_tracking_url": "http://www.example.com",
-              "privacy_policy_url": "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf",
-              "max_party_size": 7,
-              "guest_booking_starting_from_hint": "We are taking online bookings for June onwards",
+              "prefered-locale": "de",
+              "phone-prefix-code": "+49",
+              "guest-notes-for-booking-page": "<div style='text-align:center'>Our Mission is to feed you great food.</div>",
+              "guest-notes-for-payment-page": "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.",
+              "payment-provider": "adyen",
+              "checkout-image-url":"https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg",
+              "welcome-image-url":"https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg",
+              "address-line": "Borsigstraße 9, 10115, Berlin, Germany",
+              "conversion-tracking-url": "http://www.example.com",
+              "privacy-policy-url": "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf",
+              "max-party-size": 7,
+              "guest-booking-starting-from-hint": "We are taking online bookings for June onwards",
               "name": "Demo",
               "city": "Berlin",
               "languages": ["DE", "EN"],
@@ -97,44 +97,44 @@ Seatris Guest Booking is an API allowing users to make reservations
               "email": "sales@seatris.com",
               "shifts": [{"id":51,"name":"Demo"}],
               "floors": [{"id":0,"name":"all_floors"}],
-              "askForPreferences": true,
-              "shiftTemplates":
+              "ask-for-preferences": true,
+              "shift-templates":
               [
                 {
                   "id": 230,
-                  "floor_id": 35,
+                  "floor-id": 35,
                   "name": "Dinner",
-                  "noshow_fee_currency": "EUR",
-                  "noshow_fee_cents": 4000,
-                  "cancellation_limit_text": "15:00 am Tag der Buchung",
-                  "cancellation_limit_for_groups_text": "14:00 am Tag vor der Buchung",
-                  "booking_time_in_advance_minutes": -1
+                  "noshow-fee-currency": "EUR",
+                  "noshow-fee-cents": 4000,
+                  "cancellation-limit-text": "15:00 am Tag der Buchung",
+                  "cancellation-limit-for-groups-text": "14:00 am Tag vor der Buchung",
+                  "booking-time-in-advance-minutes": -1
                 },
                 {
                   "id":236,
-                  "floor_id":35,
+                  "floor-id":35,
                   "name":"Dinner Di-Do",
-                  "noshow_fee_currency":"EUR",
-                  "noshow_fee_cents":0,
-                  "cancellation_limit_text":"15 Uhr am Tag der Reservierung",
-                  "cancellation_limit_for_groups_text":"",
-                  "booking_time_in_advance_minutes":-1
+                  "noshow-fee-currency":"EUR",
+                  "noshow-fee-cents":0,
+                  "cancellation-limit-text":"15 Uhr am Tag der Reservierung",
+                  "cancellation-limit-for-groups-text":"",
+                  "booking-time-in-advance-minutes":-1
                 }
               ]
             }
 
-# GET /restaurants/{restaurant_id}/dates
+# GET /restaurants/{slug}/dates
 + Parameters
-    + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
+    + slug (string, required) - ID of the Restaurant in the form of a slug
     + persons (number, required) - the number of persons
-    + start_date (string, required) - Date in form of 'YY-MM-DD' to start the search
-    + end_date (string, required) - Date in form of 'YY-MM-DD' where search ends
+    + start-date (string, required) - Date in form of 'YY-MM-DD' to start the search
+    + end-date (string, required) - Date in form of 'YY-MM-DD' where search ends
 
 + Request (application/json)
 
             {
-              "start_date": "2018-08-01",
-              "end_date": "2018-08-31",
+              "start-date": "2018-08-01",
+              "end-date": "2018-08-31",
               "persons": 3
             }
 + Response 200 (application/json)
@@ -150,7 +150,7 @@ Seatris Guest Booking is an API allowing users to make reservations
                     + times (array)
                         - (object)
                             + id: 227480 (number)
-                            + shift_category_id: 3 (number)
+                            + shift-category-id: 3 (number)
 
 
     + Body
@@ -169,32 +169,32 @@ Seatris Guest Booking is an API allowing users to make reservations
                           {
                             "id":227480,
                             "shift":"lunch",
-                            "shift_category_id":3,
-                            "start_time":"12:00",
-                            "end_time":"16:00",
+                            "shift-category-id":3,
+                            "start-time":"12:00",
+                            "end-time":"16:00",
                             "guests":0,
-                            "max_persons_capacity":25,
-                            "all_turntimes":{"1":90}
+                            "max-persons-capacity":25,
+                            "all-turntimes":{"1":90}
                           },
                           {
                             "id":227273,
                             "shift":"dinner",
-                            "shift_category_id":4,
-                            "start_time":"19:00",
-                            "end_time":"00:30",
+                            "shift-category-id":4,
+                            "start-time":"19:00",
+                            "end-time":"00:30",
                             "guests":0,
-                            "max_persons_capacity":28,
-                            "all_turntimes":{"1":90,"2":90,"3":90,"4":90,"5":90,"6":90}
+                            "max-persons-capacity":28,
+                            "all-turntimes":{"1":90,"2":90,"3":90,"4":90,"5":90,"6":90}
                           },
                           {
                             "id":193265,
                             "shift":"dinner",
-                            "shift_category_id":4,
-                            "start_time":"19:00",
-                            "end_time":"00:30",
+                            "shift-category-id":4,
+                            "start-time":"19:00",
+                            "end-time":"00:30",
                             "guests":7,
-                            "max_persons_capacity":28,
-                            "all_turntimes":{"1":90,"2":90,"3":90,"4":90,"5":90,"6":90}
+                            "max-persons-capacity":28,
+                            "all-turntimes":{"1":90,"2":90,"3":90,"4":90,"5":90,"6":90}
                           }
                         ],
                       "slots":[]
@@ -207,12 +207,12 @@ Seatris Guest Booking is an API allowing users to make reservations
                           {
                             "id":193267,
                             "shift":"Weinbar",
-                            "shift_category_id":4,
-                            "start_time":"17:00",
-                            "end_time":"23:00",
+                            "shift-category-id":4,
+                            "start-time":"17:00",
+                            "end-time":"23:00",
                             "guests":0,
-                            "max_persons_capacity":60,
-                            "all_turntimes":{"1":60,"2":60,"3":60,"4":60,"5":60,"6":150}
+                            "max-persons-capacity":60,
+                            "all-turntimes":{"1":60,"2":60,"3":60,"4":60,"5":60,"6":150}
                           }
                         ],
                         "slots":[]
@@ -232,22 +232,22 @@ Seatris Guest Booking is an API allowing users to make reservations
                           {
                             "id":193284,
                             "shift":"lunch",
-                            "shift_category_id":3,
-                            "start_time":"12:00",
-                            "end_time":"16:00",
+                            "shift-category-id":3,
+                            "start-time":"12:00",
+                            "end-time":"16:00",
                             "guests":0,
-                            "max_persons_capacity":25,
-                            "all_turntimes":{"1":90}
+                            "max-persons-capacity":25,
+                            "all-turntimes":{"1":90}
                           },
                           {
                             "id":193285,
                             "shift":"dinner",
-                            "shift_category_id":4,
-                            "start_time":"19:00",
-                            "end_time":"00:30",
+                            "shift-category-id":4,
+                            "start-time":"19:00",
+                            "end-time":"00:30",
                             "guests":0,
-                            "max_persons_capacity":28,
-                            "all_turntimes":{"1":90,"2":90,"3":90,"4":90,"5":90,"6":90}
+                            "max-persons-capacity":28,
+                            "all-turntimes":{"1":90,"2":90,"3":90,"4":90,"5":90,"6":90}
                           }
                         ]
                       }
@@ -255,49 +255,49 @@ Seatris Guest Booking is an API allowing users to make reservations
                   }
             ]
 
-# GET /restaurants/{restaurant_id}/slots
+# GET /restaurants/{slug}/slots
 + Parameters
-    + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
+    + slug (string, required) - ID of the Restaurant in the form of a slug
     + persons (number, required) - the number of persons
-    + shiftId (number, required) - Id of the shift
+    + shift-id (number, required) - Id of the shift
 
 + Response 200 (application/json)
 
     + Attributes (array)
         - (object)
             + time: "12:00" (string) - time formated
-            + shift_category_id: 3 (number)
+            + shift-category-id: 3 (number)
             + available: true (boolean)
 
     + Body
 
             [
               {
-                "shift_category_id":3,
+                "shift-category-id":3,
                 "time":"12:00",
                 "available":true
               },
               {
-                "shift_category_id":3,
+                "shift-category-id":3,
                 "time":"12:15",
                 "available":true
               },
               {
-                "shift_category_id":3,
+                "shift-category-id":3,
                 "time":"12:30",
                 "available":true
               }
             ]
 
 
-# POST /restaurants/{restaurant_id}/bookings/create
+# POST /restaurants/{slug}/bookings/create
 
 + Parameters
-    + restaurant_id (string, required) - ID of the Restaurant in the form of a slug
+    + slug (string, required) - ID of the Restaurant in the form of a slug
     + locale (string, required) - the locale (de or en)
     + persons (number, required) - How many persons
     + user (User, required) - The first name of the main person
-
+    
 + Request (application/json)
 
         {
@@ -309,16 +309,16 @@ Seatris Guest Booking is an API allowing users to make reservations
                 "gender": "male",
                 "phone": "+491792404436",
                 "restrictions": "Veganer",
-                "restaurant_newsletter": true
+                "restaurant-newsletter": true
               },
               "date": "2018-08-16",
               "time": "20:15",
               "sessionid": "f37681588d198288dec3bfd0ed",
-              "isRequest": false,
-              "shiftId": 193304,
-              "cancel_limit": "10:00 Uhr am Tag vor der Buchung",
-              "noshow_fee": "EUR 10",
-              "notes_by_guest": "These are my notes"
+              "is-request": false,
+              "shift-id": 193304,
+              "cancel-limit": "10:00 Uhr am Tag vor der Buchung",
+              "noshow-fee": "EUR 10",
+              "notes-by-guest": "These are my notes"
           }
 + Response 200 (application/json)
 
@@ -327,5 +327,5 @@ Seatris Guest Booking is an API allowing users to make reservations
             {
               "success":true,
               "id":110504,
-              "cancellation_token":"mut6FvW1pQtzwXYpeVsQ"
+              "cancellation-token":"mut6FvW1pQtzwXYpeVsQ"
             }
