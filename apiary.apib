@@ -40,7 +40,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 # GET /restaurants/{slug}
 + Parameters
-    + slug (string, required) - ID of the Restaurant in the form of a slug
+    + slug: `demo` (string, required) - ID of the Restaurant in the form of a slug
 
 + Response 200 (application/json)
 
@@ -48,16 +48,16 @@ Seatris Guest Booking is an API allowing users to make reservations
         + id: 1391 (number)
         + shifts: [{"id":51,"name":"Demo"}] (array[Shift]) - Array of Shifts
         + floors: [{"id":0,"name":"all_floors"}] (array[Floor]) - Array of Floors
-        + prefered-locale: "en" (string) - The prefered locale
-        + phone-prefix-code: "+49" (string)
-        + guest-notes-for-booking-page: "<div style="text-align:center">"Our Mission" is to feed you great food.</div>" (string)
-        + guest-notes-for-payment-page: "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details." (string)
-        + payment-provider: "adyen" (string)
-        + checkout-image-url:  "https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg" (string)
-        + welcome-image-url: "https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg" (string)
-        + address-line: "Borsigstraße 9, 10115, Berlin, Germany" (string)
-        + conversion-tracking-url: "http://www.example.com" (string)
-        + privacy-policy-url: "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf" (string) - URL to the privacy policy document in Guest-Bookings
+        + prefered-locale: `en` (string) - The prefered locale
+        + phone-prefix-code: `+49` (string)
+        + guest-notes-for-booking-page: `<div style="text-align:center">"Our Mission" is to feed you great food.</div>` (string)
+        + guest-notes-for-payment-page: `We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.` (string)
+        + payment-provider: `adyen` (string)
+        + checkout-image-url:  `https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg` (string)
+        + welcome-image-url: `https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg` (string)
+        + address-line: `Borsigstraße 9, 10115, Berlin, Germany` (string)
+        + conversion-tracking-url: `http://www.example.com` (string)
+        + privacy-policy-url: `https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf` (string) - URL to the privacy policy document in Guest-Bookings
         + max-party-size: 7 (number)
         + guest-booking-starting-from-hint: "We are taking online bookings for June onwards" (string)
         + name: "Demo" (string)
@@ -125,16 +125,16 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 # GET /restaurants/{slug}/dates
 + Parameters
-    + slug (string, required) - ID of the Restaurant in the form of a slug
-    + persons (number, required) - the number of persons
-    + start-date (string, required) - Date in form of 'YY-MM-DD' to start the search
-    + end-date (string, required) - Date in form of 'YY-MM-DD' where search ends
+    + slug: `demo` (string, required) - ID of the Restaurant in the form of a slug
+    + persons: 3 (number, required) - the number of persons
+    + "start-date": `2019-08-01` (string, required) - Date in form of 'YY-MM-DD' to start the search
+    + "end-date": `2019-08-31` (string, required) - Date in form of 'YY-MM-DD' where search ends
 
 + Request (application/json)
 
             {
-              "start-date": "2018-08-01",
-              "end-date": "2018-08-31",
+              "start-date": "2019-08-01",
+              "end-date": "2019-08-31",
               "persons": 3
             }
 + Response 200 (application/json)
@@ -257,9 +257,9 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 # GET /restaurants/{slug}/slots
 + Parameters
-    + slug (string, required) - ID of the Restaurant in the form of a slug
-    + persons (number, required) - the number of persons
-    + shift-id (number, required) - Id of the shift
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+    + persons: 2 (number, required) - the number of persons
+    + "shift-id": 123 (number, required) - Id of the shift
 
 + Response 200 (application/json)
 
@@ -293,11 +293,19 @@ Seatris Guest Booking is an API allowing users to make reservations
 # POST /restaurants/{slug}/bookings/create
 
 + Parameters
-    + slug (string, required) - ID of the Restaurant in the form of a slug
-    + locale (string, required) - the locale (de or en)
-    + persons (number, required) - How many persons
-    + user (User, required) - The first name of the main person
-    
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+    + locale: en (string, required) - the locale (de or en)
+    + persons: 2 (number, required) - How many persons
+    + user: "user" : {
+        "firstname": "Martin",
+        "lastname": "Wöginger",
+        "email": "woeginger@exasoft.net",
+        "gender": "male",
+        "phone": "+491792404436",
+        "restrictions": "Veganer",
+        "restaurant-newsletter": true
+      } (User, required) - The first name of the main person
+
 + Request (application/json)
 
         {
