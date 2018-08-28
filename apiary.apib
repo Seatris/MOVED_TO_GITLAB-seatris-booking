@@ -247,7 +247,7 @@ Seatris Guest Booking is an API allowing users to make reservations
         - (object)
             + time: "12:00" (string) - time formated
             + shift_category_id: 3 (number)
-            + available: true (boolean)
+            + waitlist: true (boolean) - only waitlist available
 
     + Body
 
@@ -255,17 +255,17 @@ Seatris Guest Booking is an API allowing users to make reservations
               {
                 "shift_category_id":3,
                 "time":"12:00",
-                "available":true
+                "waitlist":false
               },
               {
                 "shift_category_id":3,
                 "time":"12:15",
-                "available":true
+                "waitlist":false
               },
               {
                 "shift_category_id":3,
                 "time":"12:30",
-                "available":true
+                "waitlist":true
               }
             ]
 
