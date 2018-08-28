@@ -79,8 +79,8 @@ Seatris Guest Booking is an API allowing users to make reservations
               "guest_notes_for_booking_page": "<div style='text-align:center'>Our Mission is to feed you great food.</div>",
               "guest_notes_for_payment_page": "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.",
               "payment_provider": "adyen",
-              "checkout_image_url":"https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg",
-              "welcome_image_url":"https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg",
+              "checkout_image_url": "https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg",
+              "welcome_image_url": "https://finedining-production.s3.amazonaws.com/restaurants/welcome_images/000/001/317/default/AMADOR4_%282%29.jpg",
               "address_line": "Borsigstraße 9, 10115, Berlin, Germany",
               "conversion_tracking_url": "http://www.example.com",
               "privacy_policy_url": "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf",
@@ -92,13 +92,14 @@ Seatris Guest Booking is an API allowing users to make reservations
               "phone": "+49 - 30 814540400",
               "twitter": "https://twitter.com/SeatrisTeam",
               "facebook": "https://www.facebook.com/seatris/",
-              "instagram" "https://www.facebook.com/seatris/",
+              "instagram": "https://www.facebook.com/seatris/",
               "email": "sales@seatris.com",
-              "floors": [{"id":0,"name":"all_floors"}],
+              "floors": [{
+                "id": 0,
+                "name": "all_floors"
+              }],
               "ask_for_preferences": true,
-              "shift_templates":
-              [
-                {
+              "shift_templates": [{
                   "id": 230,
                   "floor_id": 35,
                   "name": "Dinner",
@@ -109,17 +110,18 @@ Seatris Guest Booking is an API allowing users to make reservations
                   "booking_time_in_advance_minutes": -1
                 },
                 {
-                  "id":236,
-                  "floor_id":35,
-                  "name":"Dinner Di-Do",
-                  "noshow_fee_currency":"EUR",
-                  "noshow_fee_cents":0,
-                  "cancellation_limit_text":"15 Uhr am Tag der Reservierung",
-                  "cancellation_limit_for_groups_text":"",
-                  "booking_time_in_advance_minutes":-1
+                  "id": 236,
+                  "floor_id": 35,
+                  "name": "Dinner Di-Do",
+                  "noshow_fee_currency": "EUR",
+                  "noshow_fee_cents": 0,
+                  "cancellation_limit_text": "15 Uhr am Tag der Reservierung",
+                  "cancellation_limit_for_groups_text": "",
+                  "booking_time_in_advance_minutes": -1
                 }
               ]
             }
+
 
 # GET /restaurants/{slug}/dates
 + Parameters
