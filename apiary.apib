@@ -314,6 +314,7 @@ Seatris Guest Booking is an API allowing users to make reservations
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
     + locale: en (string, required) - the locale (de or en)
     + persons: 2 (number, required) - How many persons
+    + floor_id: 193304 (number, required) - Id of floor
     + user: "user" : {
         "firstname": "Martin",
         "lastname": "Wöginger",
@@ -328,6 +329,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 
         {
               "persons": 2,
+              "locale": "en",
               "user" : {
                 "firstname": "Martin",
                 "lastname": "Wöginger",
@@ -339,11 +341,8 @@ Seatris Guest Booking is an API allowing users to make reservations
               },
               "date": "2018-08-16",
               "time": "20:15",
-              "sessionid": "f37681588d198288dec3bfd0ed",
               "is_request": false,
-              "shift_id": 193304,
-              "cancel_limit": "10:00 Uhr am Tag vor der Buchung",
-              "noshow_fee": "EUR 10",
+              "floor_id": 193304,
               "notes_by_guest": "These are my notes"
           }
 + Response 200 (application/json)
