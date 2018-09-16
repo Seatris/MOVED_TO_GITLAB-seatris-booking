@@ -26,6 +26,8 @@ Seatris Guest Booking is an API allowing users to make reservations
 + cancellation_limit_text (string) - Hint text for cancellations
 + cancellation_limit_for_groups_text (string) - Hint text for cancellations for groups
 + booking_time_in_advance_minutes (number) - how many minutes a booking must be done before shift begin, -1 if there is no limit
++ guest_notes_for_availablity_page (string)
++ not_requestable_message_for_availablity_page (string)
 
 ## User (object)
 
@@ -103,7 +105,9 @@ Seatris Guest Booking is an API allowing users to make reservations
                   "noshow_fee_cents": 4000,
                   "cancellation_limit_text": "15:00 am Tag der Buchung",
                   "cancellation_limit_for_groups_text": "14:00 am Tag vor der Buchung",
-                  "booking_time_in_advance_minutes": -1
+                  "booking_time_in_advance_minutes": -1,
+                  "guest_notes_for_availablity_page": "We take bookings for the above times only. We take walk-ins for other times; first come first served.",
+                  "not_requestable_message_for_availablity_page": "The restaurant is currently not taking bookings"
                 },
                 {
                   "id": 236,
@@ -113,7 +117,9 @@ Seatris Guest Booking is an API allowing users to make reservations
                   "noshow_fee_cents": 0,
                   "cancellation_limit_text": "15 Uhr am Tag der Reservierung",
                   "cancellation_limit_for_groups_text": "",
-                  "booking_time_in_advance_minutes": -1
+                  "booking_time_in_advance_minutes": -1,
+                  "guest_notes_for_availablity_page": "",
+                  "not_requestable_message_for_availablity_page": ""
                 }
               ]
             }
