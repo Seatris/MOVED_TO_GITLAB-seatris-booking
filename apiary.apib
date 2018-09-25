@@ -145,7 +145,7 @@ Seatris Guest Booking is an API allowing users to make reservations
         - (object)
             + date: "2018-08-14" (string) - date formated
             + state: 1 (number) - availabity state
-            + floors:  (array)
+            + floors (array)
                 - (object)
                     + id: 7 (number)
                     + name: "MainFloor" (string)
@@ -321,6 +321,13 @@ Seatris Guest Booking is an API allowing users to make reservations
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
 
++ Response 200 (application/json)
+
+    + Body
+
+            {
+              "success":true
+            }
 
 # POST /restaurants/{slug}/bookings/create
 
