@@ -93,13 +93,17 @@ Seatris Guest Booking is an API allowing users to make reservations
               "instagram": "https://www.facebook.com/seatris/",
               "email": "sales@seatris.com",
               "floors": [{
-                "id": 0,
-                "name": "all_floors"
-              }],
+                  "id": 1,
+                  "name": "Main"
+                },
+                {
+                  "id": 2,
+                  "name": "Bar"
+                }],
               "ask_for_preferences": true,
               "shift_templates": [{
                   "id": 230,
-                  "floor_id": 35,
+                  "floor_id": 1,
                   "name": "Dinner",
                   "noshow_fee_currency": "EUR",
                   "noshow_fee_cents": 4000,
@@ -111,8 +115,8 @@ Seatris Guest Booking is an API allowing users to make reservations
                 },
                 {
                   "id": 236,
-                  "floor_id": 35,
-                  "name": "Dinner Di-Do",
+                  "floor_id": 2,
+                  "name": "Dinner",
                   "noshow_fee_currency": "EUR",
                   "noshow_fee_cents": 0,
                   "cancellation_limit_text": "15 Uhr am Tag der Reservierung",
