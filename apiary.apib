@@ -21,6 +21,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 + id (number) - Id of template
 + floor_id (number) - Id of floor
++ shift_category_id (number) - Id of ShiftCategory
 + name (string) - Name of template
 + noshow_fee_currency (string) - Currency for noshow fee
 + noshow_fee_cents (number) - Amount for noshow fee (in cents)
@@ -107,6 +108,7 @@ Seatris Guest Booking is an API allowing users to make reservations
               "shift_templates": [{
                   "id": 230,
                   "floor_id": 1,
+                  "shift_category_id": 2,
                   "name": "Dinner",
                   "noshow_fee_currency": "EUR",
                   "noshow_fee_cents": 4000,
@@ -119,6 +121,7 @@ Seatris Guest Booking is an API allowing users to make reservations
                 {
                   "id": 236,
                   "floor_id": 2,
+                  "shift_category_id": 2,
                   "name": "Dinner",
                   "noshow_fee_currency": "EUR",
                   "noshow_fee_cents": 0,
