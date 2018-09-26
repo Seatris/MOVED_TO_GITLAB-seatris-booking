@@ -49,6 +49,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 
     + Attributes (object)
         + id: "demo" (string)
+        + prefered_locale: `en` (string) - The prefered locale
         + guest_notes_for_booking_page: `<div style="text-align:center">"Our Mission" is to feed you great food.</div>` (string)
         + guest_notes_for_payment_page: `We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.` (string)
         + payment_provider: `adyen` (string)
@@ -76,6 +77,7 @@ Seatris Guest Booking is an API allowing users to make reservations
             {
               "id": "demo",
               "guest_notes_for_booking_page": "<div style='text-align:center'>Our Mission is to feed you great food.</div>",
+              "prefered_locale": "de",
               "guest_notes_for_payment_page": "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.",
               "payment_provider": "adyen",
               "checkout_image_url": "https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg",
