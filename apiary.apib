@@ -368,7 +368,6 @@ Data needed to tokenize creditcards. Response depends on provider.
 
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
-    + locale: en (string, required) - the locale (de or en)
     + adults: 3 (number, required) - How many adults
     + infants: 2 (number, optional) - How many infants
     + children: 1 (number, optional) - How many children
@@ -386,6 +385,7 @@ Data needed to tokenize creditcards. Response depends on provider.
         "phone": "+491792404436" (string, required),
         "restrictions": "Veganer",
         "restaurant_newsletter": true (boolean, required)
+        "locale": "en" (string, required) - the locale (de or en)
       } (User, required)
 
 + Request (application/json)
@@ -394,7 +394,6 @@ Data needed to tokenize creditcards. Response depends on provider.
               "adults": 3,
               "infants": 2,
               "children": 1,
-              "locale": "en",
               "date": "2018-08-16",
               "time": "20:15",
               "is_request": false,
@@ -407,7 +406,8 @@ Data needed to tokenize creditcards. Response depends on provider.
                 "gender": "male",
                 "phone": "+491792404436",
                 "restrictions": "Veganer",
-                "restaurant_newsletter": true
+                "restaurant_newsletter": true,
+                "locale": "en"
               }
           }
 + Response 200 (application/json)
