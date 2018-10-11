@@ -250,41 +250,6 @@ Data for restaurants, all needed for the guest booking.
                   }
             ]
 
-# GET /restaurants/{slug}/slots
-+ Parameters
-    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
-    + persons: 2 (number, required) - the number of persons
-    + date: `2019-08-01` (string, required) - Date in form of 'YY-MM-DD' from which to load the slots. if date is today all from retaurant now are returned
-    + floor_id: 123 (number, required) - Id of floor
-
-+ Response 200 (application/json)
-
-    + Attributes (array)
-        - (object)
-            + time: "12:00" (string) - time formated
-            + shift_category_id: 3 (number)
-            + waitlist: true (boolean) - only waitlist available
-
-    + Body
-
-            [
-              {
-                "shift_category_id":3,
-                "time":"12:00",
-                "waitlist":false
-              },
-              {
-                "shift_category_id":3,
-                "time":"12:15",
-                "waitlist":false
-              },
-              {
-                "shift_category_id":3,
-                "time":"12:30",
-                "waitlist":true
-              }
-            ]
-
 # GET /restaurants/{slug}/next_availabilities
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
