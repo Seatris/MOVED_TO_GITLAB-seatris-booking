@@ -333,9 +333,9 @@ Data needed to tokenize creditcards. Response depends on provider.
 
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
-    + adults: 3 (number, required) - How many adults
-    + infants: 2 (number, optional) - How many infants
-    + children: 1 (number, optional) - How many children
+    + num_adults: 3 (number, required) - How many adults
+    + num_infants: 2 (number, optional) - How many infants
+    + num_children: 1 (number, optional) - How many children
     + time: "12:15" (string, required) -
     + is_request: false (boolean, required)
     + date: "2019-08-01" (string, required) - Date in form of 'YY-MM-DD' from which to load
@@ -356,9 +356,9 @@ Data needed to tokenize creditcards. Response depends on provider.
 + Request (application/json)
 
         {
-              "adults": 3,
-              "infants": 2,
-              "children": 1,
+              "num_adults": 3,
+              "num_infants": 2,
+              "num_children": 1,
               "date": "2018-08-16",
               "time": "20:15",
               "is_request": false,
