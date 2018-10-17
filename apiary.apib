@@ -31,6 +31,13 @@ Seatris Guest Booking is an API allowing users to make reservations
 + guest_notes_for_availablity_page (string)
 + not_requestable_message_for_availablity_page (string)
 
+## Timeslot (object)
++ time: "12:00" (string) - time formated
++ shift_category_id: 3 (number)
++ waitlist: true (boolean) - only waitlist available
++ date: "2019-08-01" (string) - Date in form of 'YY-MM-DD' from which to load
++ floor_id: 123 (number) - Id of floor
+
 ## Event (object)
 + id: "demo_ev_0_1_idx0" (string) - identifier for event
 + header: "1 Course Pre-Theater" (string) - header for event
@@ -269,41 +276,49 @@ Data for restaurants, all needed for the guest booking.
     + floor_id: 123 (number, optional) - Id of floor
     + shift_category_id: 2 (number, optional) - Id of shift-category, used as filter
 
+
 + Response 200 (application/json)
 
-    + Attributes (array)
-        - (object)
-            + time: "12:00" (string) - time formated
-            + shift_category_id: 3 (number)
-            + waitlist: true (boolean) - only waitlist available
-            + date: "2019-08-01" (string) - Date in form of 'YY-MM-DD' from which to load
-            + floor_id: 123 (number) - Id of floor
+    + Attributes (object)
+      + events: (array[Event]) - Array of Events
+      + slots (array[Timeslot]) - Array of Timeslots
 
     + Body
 
-            [
-              {
-                "shift_category_id":3,
-                "time":"12:00",
-                "date": "2019-08-01",
-                "floor_id": 123,
-                "waitlist":false
-              },
-              {
-                "shift_category_id":3,
-                "time":"12:15",
-                "date": "2019-08-01",
-                "floor_id": 123,
-                "waitlist":false
-              },
-              {
-                "shift_category_id":3,
-                "time":"12:30",
-                "date": "2019-08-01",
-                "floor_id": 123,
-                "waitlist":true
-              }
-            ]
+            {
+              "events": [
+                {
+                  "id": "demo_ev_0_2_idx0",
+                  "header": "41 Course Pre-Theater",
+                  "description": "opop Classic Basics paired with Asian influences",
+                  "price": "2400",
+                  "image_url": "https://seatris-production.s3.amazonaws.com/r/e/317/images/header.jpg"
+                }
+              ],
+              "slots": [
+                {
+                  "shift_category_id":3,
+                  "time":"12:00",
+                  "date": "2019-08-01",
+                  "floor_id": 123,
+                  "waitlist":false
+                },
+                {
+                  "shift_category_id":3,
+                  "time":"12:15",
+                  "date": "2019-08-01",
+                  "floor_id": 123,
+                  "waitlist":false
+                },
+                {
+                  "shift_category_id":3,
+                  "time":"12:30",
+                  "date": "2019-08-01",
+                  "floor_id": 123,
+                  "waitlist":true
+                }
+              ]
+            }
 
 
 # GET /restaurants/{slug}/payment_tokens
