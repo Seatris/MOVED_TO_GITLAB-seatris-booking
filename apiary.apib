@@ -44,6 +44,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 + description: "12 Classic Basics paired with Asian influences" (string) - description for event
 + price: 20400 (number) - price in cents, currency information is part of restaurant
 + image_url: "https://seatris-production.s3.amazonaws.com/r/e/317/images/header.jpg" (string) - absolut url for event image
++ offers: [] (array[Timeslot]) - timeslots with availibilities
 
 ## User (object)
 
@@ -278,7 +279,7 @@ Data for restaurants, all needed for the guest booking.
 
 
 + Response 200 (application/json)
-    
+
     + Attributes (object)
         + events: []  (array[Event]) - Array of Events
         + slots: [] (array[Timeslot]) - Array of Timeslots
@@ -292,7 +293,16 @@ Data for restaurants, all needed for the guest booking.
                   "header": "41 Course Pre-Theater",
                   "description": "opop Classic Basics paired with Asian influences",
                   "price": "2400",
-                  "image_url": "https://seatris-production.s3.amazonaws.com/r/e/317/images/header.jpg"
+                  "image_url": "https://seatris-production.s3.amazonaws.com/r/e/317/images/header.jpg",
+                  "offers": [
+                    {
+                      "shift_category_id": 2,
+                      "time": "18:00",
+                      "date": "2018-10-17",
+                      "floor_id": 123,
+                      "waitlist":false
+                    }
+                  ]
                 }
               ],
               "slots": [
