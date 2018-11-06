@@ -206,12 +206,14 @@ Data for restaurants, all needed for the guest booking.
 + Response 200 (application/json)
 
     + Attributes (object)
+        + date: "2019-08-01" (string) - date of availabilities
         + events: []  (array[Event]) - Array of Events
         + slots: [] (array[Timeslot]) - Array of Timeslots
 
     + Body
 
             {
+              "date": "2019-08-01",
               "events": [
                 {
                   "id": "demo_ev_0_2_idx0",
@@ -266,21 +268,18 @@ Data for restaurants, all needed for the guest booking.
                 {
                   "shift_category_id":3,
                   "time":"12:00",
-                  "date": "2019-08-01",
                   "floor_id": 123,
                   "waitlist":false
                 },
                 {
                   "shift_category_id":3,
                   "time":"12:15",
-                  "date": "2019-08-01",
                   "floor_id": 123,
                   "waitlist":false
                 },
                 {
                   "shift_category_id":3,
                   "time":"12:30",
-                  "date": "2019-08-01",
                   "floor_id": 123,
                   "waitlist":true
                 }
