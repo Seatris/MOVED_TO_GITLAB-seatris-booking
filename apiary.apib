@@ -164,13 +164,17 @@ Data for restaurants, all needed for the guest booking.
     + persons: 3 (number, required) - the number of persons
     + start_date: `2019-08-01` (string, required) - Date in form of 'YY-MM-DD' to start the search
     + end_date: `2019-08-31` (string, required) - Date in form of 'YY-MM-DD' where search ends
+    + floor_id: 7 (number, optional)
+    + shift_category_id: 2 (number, optional)
 
 + Request (application/json)
 
             {
               "start_date": "2019-08-01",
               "end_date": "2019-08-31",
-              "persons": 3
+              "persons": 3,
+              "floor_id": 7,
+              "shift_category_id": 2
             }
 + Response 200 (application/json)
 
