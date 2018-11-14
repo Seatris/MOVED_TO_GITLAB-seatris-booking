@@ -67,6 +67,7 @@ Data for restaurants, all needed for the guest booking.
 
     + Attributes (object)
         + id: "demo" (string) - Slug of the restaurant
+        + name: "Seatris Presentation" (string)
         + prefered_locale: `en` (string) - The prefered locale
         + guest_notes_for_booking_page: `<div style="text-align:center">"Our Mission" is to feed you great food.</div>` (string)
         + guest_notes_for_payment_page: `We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.` (string)
@@ -78,7 +79,6 @@ Data for restaurants, all needed for the guest booking.
         + privacy_policy_url: `https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf` (string) - URL to the privacy policy document in Guest-Bookings
         + max_party_size: 7 (number)
         + guest_booking_starting_from_hint: "We are taking online bookings for June onwards" (string)
-        + name: "Demo" (string)
         + city: "Berlin" (string)
         + available_guest_languages: ["DE", "EN"] (array[string])
         + phone: "+49 - 30 814540400" (string)
@@ -90,13 +90,14 @@ Data for restaurants, all needed for the guest booking.
         + ask_for_preferences: true (boolean) - User should be asked for preferences
         + currency: "EUR" (string)
         + vat: 19 (number) - vat (mehrwertsteuer)
-        + floors: [{"id":0,"name":"all_floors"}] (array[Floor]) - Array of Floors
+        + floors: [{"id":1,"name":"all_floors"}] (array[Floor]) - Array of Floors
         + shift_templates (array[Shifttemplate]) - Array of Shifttemplates
 
     + Body
 
             {
               "id": "demo",
+              "name": "Seatris Presentation",
               "guest_notes_for_booking_page": "<div style='text-align:center'>Our Mission is to feed you great food.</div>",
               "prefered_locale": "de",
               "guest_notes_for_payment_page": "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.",
@@ -108,7 +109,6 @@ Data for restaurants, all needed for the guest booking.
               "privacy_policy_url": "https://s3.eu-central-1.amazonaws.com/seatris-legal/Restaurant-Datenschutzerklaerung.pdf",
               "max_party_size": 7,
               "guest_booking_starting_from_hint": "We are taking online bookings for June onwards",
-              "name": "Demo",
               "city": "Berlin",
               "available_guest_languages": ["DE", "EN"],
               "phone": "+49 - 30 814540400",
@@ -121,17 +121,21 @@ Data for restaurants, all needed for the guest booking.
               "vat": 19,
               "floors": [{
                   "id": 1,
-                  "name": "Main"
+                  "name": "Restaurant"
                 },
                 {
                   "id": 2,
                   "name": "Bar"
-                }],
+                },
+                {
+                  "id": 3,
+                  "name": "Chef Table"
+              }],
               "ask_for_preferences": true,
               "shift_templates": [{
-                  "id": 230,
+                  "id": 1,
                   "floor_id": 1,
-                  "shift_category_id": 2,
+                  "shift_category_id": 1,
                   "name": "Dinner",
                   "noshow_fee_currency": "EUR",
                   "noshow_fee_cents": 4000,
@@ -142,12 +146,38 @@ Data for restaurants, all needed for the guest booking.
                   "not_requestable_message_for_availablity_page": "The restaurant is currently not taking bookings"
                 },
                 {
-                  "id": 236,
-                  "floor_id": 2,
+                  "id": 2,
+                  "floor_id": 1,
                   "shift_category_id": 2,
-                  "name": "Dinner",
+                  "name": "Lunch",
                   "noshow_fee_currency": "EUR",
                   "noshow_fee_cents": 0,
+                  "cancellation_limit_text": "15 Uhr am Tag der Reservierung",
+                  "cancellation_limit_for_groups_text": "",
+                  "booking_time_in_advance_minutes": -1,
+                  "guest_notes_for_availablity_page": "",
+                  "not_requestable_message_for_availablity_page": ""
+                },
+                {
+                  "id": 3,
+                  "floor_id": 2,
+                  "shift_category_id": 1,
+                  "name": "Dinner",
+                  "noshow_fee_currency": "EUR",
+                  "noshow_fee_cents": 5000,
+                  "cancellation_limit_text": "15 Uhr am Tag der Reservierung",
+                  "cancellation_limit_for_groups_text": "",
+                  "booking_time_in_advance_minutes": -1,
+                  "guest_notes_for_availablity_page": "",
+                  "not_requestable_message_for_availablity_page": ""
+                },
+                {
+                  "id": 4,
+                  "floor_id": 3,
+                  "shift_category_id": 1,
+                  "name": "Dinner Chefstable",
+                  "noshow_fee_currency": "EUR",
+                  "noshow_fee_cents": 8000,
                   "cancellation_limit_text": "15 Uhr am Tag der Reservierung",
                   "cancellation_limit_for_groups_text": "",
                   "booking_time_in_advance_minutes": -1,
@@ -162,8 +192,8 @@ Data for restaurants, all needed for the guest booking.
 + Parameters
     + slug: `demo` (string, required) - ID of the Restaurant in the form of a slug
     + persons: 3 (number, required) - the number of persons
-    + start_date: `2019-08-01` (string, required) - Date in form of 'YY-MM-DD' to start the search
-    + end_date: `2019-08-31` (string, required) - Date in form of 'YY-MM-DD' where search ends
+    + start_date: `2018-12-01` (string, required) - Date in form of 'YY-MM-DD' to start the search
+    + end_date: `2018-12-31` (string, required) - Date in form of 'YY-MM-DD' where search ends
     + floor_id: 7 (number, optional)
     + shift_category_id: 2 (number, optional)
 
@@ -185,13 +215,37 @@ Data for restaurants, all needed for the guest booking.
     + Body
 
             [
-              "2019-08-14",
-              "2019-08-15",
-              "2019-08-17",
-              "2019-08-18",
-              "2019-08-19",
-              "2019-08-23",
-              "2019-08-25"
+              "2018-12-01",
+              "2018-12-02",
+              "2018-12-03",
+              "2018-12-04",
+              "2018-12-05",
+              "2018-12-06",
+              "2018-12-07",
+              "2018-12-08",
+              "2018-12-09",
+              "2018-12-10",
+              "2018-12-11",
+              "2018-12-12",
+              "2018-12-13",
+              "2018-12-14",
+              "2018-12-15",
+              "2018-12-16",
+              "2018-12-17",
+              "2018-12-18",
+              "2018-12-19",
+              "2018-12-20",
+              "2018-12-21",
+              "2018-12-22",
+              "2018-12-23",
+              "2018-12-24",
+              "2018-12-25",
+              "2018-12-26",
+              "2018-12-27",
+              "2018-12-28",
+              "2018-12-29",
+              "2018-12-30",
+              "2018-12-31"
             ]
 
 # GET /restaurants/{slug}/availabilities
@@ -213,7 +267,7 @@ Data for restaurants, all needed for the guest booking.
     + Body
 
             {
-              "date": "2019-08-01",
+              "date": "2018-12-15",
               "events": [
                 {
                   "id": "demo_ev_0_2_idx0",
@@ -222,9 +276,9 @@ Data for restaurants, all needed for the guest booking.
                   "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic1.jpg",
                   "offers": [
                     {
-                      "shift_category_id": 2,
+                      "shift_category_id": 1,
                       "time": "18:00",
-                      "floor_id": 123,
+                      "floor_id": 3,
                       "price": "2400",
                       "waitlist":false
                     },
@@ -244,9 +298,9 @@ Data for restaurants, all needed for the guest booking.
                   "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic2.jpg",
                   "offers": [
                     {
-                      "shift_category_id": 2,
+                      "shift_category_id": 1,
                       "time": "22:45",
-                      "floor_id": 123,
+                      "floor_id": 3,
                       "price": "5900",
                       "waitlist":true
                     }
@@ -259,9 +313,9 @@ Data for restaurants, all needed for the guest booking.
                   "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic3.jpg",
                   "offers": [
                     {
-                      "shift_category_id": 2,
+                      "shift_category_id": 1,
                       "time": "22:00",
-                      "floor_id": 123,
+                      "floor_id": 3,
                       "price": "7200",
                       "waitlist":false
                     },
@@ -284,25 +338,99 @@ Data for restaurants, all needed for the guest booking.
               ],
               "slots": [
                 {
-                  "shift_category_id":3,
-                  "time":"12:00",
-                  "floor_id": 123,
-                  "waitlist":false
+                  "waitlist":false,
+                  "time":"18:00",
+                  "shift_category_id":1,
+                  "floor_id":1
                 },
                 {
-                  "shift_category_id":3,
-                  "time":"12:15",
-                  "floor_id": 123,
-                  "waitlist":false
+                  "waitlist":false,
+                  "time":"18:15",
+                  "shift_category_id":1,
+                  "floor_id":1
                 },
                 {
-                  "shift_category_id":3,
-                  "time":"12:30",
-                  "floor_id": 123,
-                  "waitlist":true
+                  "waitlist":false,
+                  "time":"18:30",
+                  "shift_category_id":1,
+                  "floor_id":1
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:45",
+                  "shift_category_id":1,
+                  "floor_id":1
+                },
+                {
+                  "waitlist":false,
+                  "time":"19:00",
+                  "shift_category_id":1,
+                  "floor_id":1
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:00",
+                  "shift_category_id":1,
+                  "floor_id":2
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:15",
+                  "shift_category_id":1,
+                  "floor_id":2
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:30",
+                  "shift_category_id":1,
+                  "floor_id":2
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:45",
+                  "shift_category_id":1,
+                  "floor_id":2
+                },
+                {
+                  "waitlist":false,
+                  "time":"19:00",
+                  "shift_category_id":1,
+                  "floor_id":2
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:00",
+                  "shift_category_id":1,
+                  "floor_id":3
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:15",
+                  "shift_category_id":1,
+                  "floor_id":3
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:30",
+                  "shift_category_id":1,
+                  "floor_id":3
+                },
+                {
+                  "waitlist":false,
+                  "time":"18:45",
+                  "shift_category_id":1,
+                  "floor_id":3
+                },
+                {
+                  "waitlist":false,
+                  "time":"19:00",
+                  "shift_category_id":1,
+                  "floor_id":3
                 }
               ]
             }
+
+
 
 
 # GET /restaurants/{slug}/payment_tokens
