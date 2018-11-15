@@ -67,9 +67,9 @@ Data for restaurants, all needed for the guest booking.
 
     + Attributes (object)
         + id: "demo" (string) - Slug of the restaurant
-        + name: "Seatris Presentation" (string)
+        + name: "NOBELHART & SCHMUTZIG" (string)
         + prefered_locale: `en` (string) - The prefered locale
-        + guest_notes_for_booking_page: `<div style="text-align:center">"Our Mission" is to feed you great food.</div>` (string)
+        + guest_notes_for_booking_page: `Welcome to restaurant Nobelhart & Schmutzig. We serve delicious regional modern cuisine in a cosy atmosphere.` (string)
         + guest_notes_for_payment_page: `We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.` (string)
         + payment_provider: `adyen` (string)
         + checkout_image_url:  `https://seatris-production.s3.amazonaws.com/restaurants/checkout_images/000/001/317/default/AMADOR4.jpg` (string)
@@ -97,8 +97,8 @@ Data for restaurants, all needed for the guest booking.
 
             {
               "id": "demo",
-              "name": "Seatris Presentation",
-              "guest_notes_for_booking_page": "<div style='text-align:center'>Our Mission is to feed you great food.</div>",
+              "name": "NOBELHART & SCHMUTZIG",
+              "guest_notes_for_booking_page": "Welcome to restaurant Nobelhart & Schmutzig. We serve delicious regional modern cuisine in a cosy atmosphere.",
               "prefered_locale": "de",
               "guest_notes_for_payment_page": "We kindly ask you to confirm your booking by entering your credit card details. Please, not that your table reservation is not confirmed without your credit card details.",
               "payment_provider": "adyen",
@@ -521,4 +521,52 @@ Data needed to tokenize creditcards. Response depends on provider.
               "success":true,
               "id":110504,
               "cancellation_token":"mut6FvW1pQtzwXYpeVsQ"
+            }
+
+# GET /restaurants/{slug}/param_test
+Data needed to tokenize creditcards. Response depends on provider.
+
++ Parameters
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+              "floor": "missing"
+            }
+
+# GET /restaurants/{slug}/param_test?floor_id=2
+Data needed to tokenize creditcards. Response depends on provider.
+
++ Parameters
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+              "floor": 2
+            }
+
+# GET /restaurants/{slug}/param_test?floor_id=3
+Data needed to tokenize creditcards. Response depends on provider.
+
++ Parameters
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+              "floor": 3
             }
