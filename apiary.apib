@@ -23,7 +23,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 + name (string) - Name of ShiftCategory
 + order (number) - Order of ShiftCategory, starting with 1. Lower value means it is more important
 
-## Shifttemplate (object)
+## ShiftTemplate (object)
 
 + id (number) - Id of template
 + floor_id (number) - Id of floor
@@ -96,7 +96,8 @@ Data for restaurants, all needed for the guest booking.
         + currency: "EUR" (string)
         + vat: 19 (number) - vat (mehrwertsteuer)
         + floors: [{"id":1,"name":"all_floors"}] (array[Floor]) - Array of Floors
-        + shift_templates (array[Shifttemplate]) - Array of Shifttemplates
+        + shift_templates (array[ShiftTemplate]) - Array of Shifttemplates
+        + shift_categories (array[ShiftCategory]) - Array of Shiftcategories
 
     + Body
 
