@@ -15,14 +15,19 @@ Seatris Guest Booking is an API allowing users to make reservations
 
 + id (number) - Id of floor
 + name (string) - Name of floor
-+ order (number) - Order of floor, zerobased. Lower value means it is more important
++ order (number) - Order of floor, starting with 1. Lower value means it is more important
+
+## ShiftCategory (object)
+
++ id (number) - Id of ShiftCategory
++ name (string) - Name of ShiftCategory
++ order (number) - Order of ShiftCategory, starting with 1. Lower value means it is more important
 
 ## Shifttemplate (object)
 
 + id (number) - Id of template
 + floor_id (number) - Id of floor
 + shift_category_id (number) - Id of ShiftCategory
-+ name (string) - Name of template
 + noshow_fee_currency (string) - Currency for noshow fee
 + noshow_fee_cents (number) - Amount for noshow fee (in cents)
 + cancellation_limit_text (string) - Hint text for cancellations
@@ -119,24 +124,36 @@ Data for restaurants, all needed for the guest booking.
               "email": "sales@seatris.com",
               "currency": "EUR",
               "vat": 19,
+              "ask_for_preferences": true,
               "floors": [{
                   "id": 1,
-                  "name": "Restaurant"
+                  "name": "Restaurant",
+                  "order": 1
                 },
                 {
                   "id": 2,
-                  "name": "Bar"
+                  "name": "Bar",
+                  "order": 3
                 },
                 {
                   "id": 3,
-                  "name": "Chef Table"
+                  "name": "Chef Table",
+                  "order": 2
               }],
-              "ask_for_preferences": true,
+              "shift_categories": [{
+                  "id": 1,
+                  "name": "Dinner",,
+                  "order": 1
+              },
+              {
+                  "id": 2,
+                  "name": "Lunch",
+                  "order": 2
+              }],
               "shift_templates": [{
                   "id": 1,
                   "floor_id": 1,
                   "shift_category_id": 1,
-                  "name": "Dinner",
                   "noshow_fee_currency": "EUR",
                   "noshow_fee_cents": 4000,
                   "cancellation_limit_text": "Cancellations can be made free of charge until 3 PM on the booked date. Cancellations made after this time and when the table cannot be refilled will be charged EUR 80 per person.<br>&nbsp;<br>Your card will not be charged at this time. All credit card data entered onto this site is encrypted and secured with verified payment providers.",
