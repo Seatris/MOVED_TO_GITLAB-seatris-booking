@@ -98,6 +98,7 @@ Data for restaurants, all needed for the guest booking.
         + floors: [{"id":1,"name":"all_floors"}] (array[Floor]) - Array of Floors
         + shift_templates (array[ShiftTemplate]) - Array of Shifttemplates
         + shift_categories (array[ShiftCategory]) - Array of Shiftcategories
+        + events (array[Event]) - Array of Events
 
     + Body
 
@@ -199,7 +200,15 @@ Data for restaurants, all needed for the guest booking.
                   "guest_notes_for_availablity_page": "",
                   "not_requestable_message_for_availablity_page": ""
                 }
-              ]
+              ],
+              "events": [{
+                  "id": "demo_ev_0_1_idx0",
+                  "header": "1 Course Pre-Theater",
+                  "description": "12 Classic Basics paired with Asian influences",
+                  "price": 20400,
+                  "image_url": "https://seatris-production.s3.amazonaws.com/r/e/317/images/header.jpg",
+                  "offers": []
+              }]
             }
 
 
