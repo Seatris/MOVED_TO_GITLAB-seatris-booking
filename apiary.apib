@@ -206,13 +206,13 @@ Data for restaurants, all needed for the guest booking.
                   "id": "demo_ev_0_1_idx0",
                   "header": "1 Course Pre-Theater",
                   "description": "12 Classic Basics paired with Asian influences",
-                  "image_url": "https://seatris-production.s3.amazonaws.com/r/e/317/images/header.jpg"
+                  "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic1.jpg"
                 },
                 {
                   "id": "demo_ev_0_2_idx0",
                   "header": "2 Course Pre-Theater",
                   "description": "12+2 Classic Basics paired with Asian influences",
-                  "image_url": "https://seatris-production.s3.amazonaws.com/r/e/317/images/header.jpg"
+                  "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic4.jpg"
                 }
               ]
             }
@@ -387,8 +387,8 @@ Data for restaurants, all needed for the guest booking.
             }
 
 
-# GET /restaurants/{slug}/availabilities?event_id=demo_ev_0_2_idx0
-filtered availability search, permalink: /demo/event/demo_ev_0_2_idx0
+# GET /restaurants/{slug}/availabilities?event_id=demo_ev_0_1_idx0
+filtered availability search, permalink: /demo/event/demo_ev_0_1_idx0
 
 + Response 200 (application/json)
 
@@ -407,10 +407,52 @@ filtered availability search, permalink: /demo/event/demo_ev_0_2_idx0
               "shift_category_id": 1,
               "events": [
                 {
-                  "id": "demo_ev_0_2_idx0",
-                  "header": "3 Course Pre-Theater",
-                  "description": "Classic Basics paired with Asian influences",
+                  "id": "demo_ev_0_1_idx0",
+                  "header": "1 Course Pre-Theater",
+                  "description": "12 Classic Basics paired with Asian influences",
                   "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic1.jpg",
+                  "offers": [
+                    {
+                      "time": "21:00",
+                      "price": "2400",
+                      "waitlist":false
+                    },
+                    {
+                      "time": "22:00",
+                      "price": "3600",
+                      "waitlist":false
+                    }
+                  ]
+                }
+              ],
+              "slots": []
+            }
+
+
+# GET /restaurants/{slug}/availabilities?event_id=demo_ev_0_2_idx0
+filtered availability search, permalink: /demo/event/demo_ev_0_2_idx0
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + date: "2019-08-01" (string) - date of availabilities
+        + floor_id: 1 (number)
+        + shift_category_id: 1 (number)
+        + events: []  (array[Event]) - Array of Events
+        + slots: [] (array[Timeslot]) - Array of Timeslots
+
+    + Body
+
+            {
+              "date": "2018-12-15",
+              "floor_id": 2,
+              "shift_category_id": 2,
+              "events": [
+                {
+                  "id": "demo_ev_0_2_idx0",
+                  "header": "2 Course Pre-Theater",
+                  "description": "12+2 Classic Basics paired with Asian influences",
+                  "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic4.jpg",
                   "offers": [
                     {
                       "time": "18:00",
@@ -427,6 +469,7 @@ filtered availability search, permalink: /demo/event/demo_ev_0_2_idx0
               ],
               "slots": []
             }
+
 
 
 # GET /restaurants/{slug}/payment_tokens
