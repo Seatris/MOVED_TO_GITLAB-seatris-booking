@@ -285,12 +285,15 @@ Data for restaurants, all needed for the guest booking.
     + date: `2019-08-01` (string, optional) - Date in form of 'YY-MM-DD' from which to load the slots. if date is today all from retaurant now are returned
     + floor_id: 123 (number, optional) - Id of floor
     + shift_category_id: 2 (number, optional) - Id of shift-category, used as filter
+    + event_id: 'abc_event' (string, optional) - Id or slug? of event, used to filter availabilities to this event only
 
 
 + Response 200 (application/json)
 
     + Attributes (object)
         + date: "2019-08-01" (string) - date of availabilities
+        + floor_id: 1 (number)
+        + shift_category_id: 1 (number)
         + events: []  (array[Event]) - Array of Events
         + slots: [] (array[Timeslot]) - Array of Timeslots
 
@@ -383,6 +386,46 @@ Data for restaurants, all needed for the guest booking.
             }
 
 
+# GET /restaurants/{slug}/availabilities?event_id=demo_ev_0_2_idx0
+filtered availability search, permalink: /demo/event/demo_ev_0_2_idx0
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + date: "2019-08-01" (string) - date of availabilities
+        + floor_id: 1 (number)
+        + shift_category_id: 1 (number)
+        + events: []  (array[Event]) - Array of Events
+        + slots: [] (array[Timeslot]) - Array of Timeslots
+
+    + Body
+
+            {
+              "date": "2018-12-15",
+              "floor_id": 1,
+              "shift_category_id": 1,
+              "events": [
+                {
+                  "id": "demo_ev_0_2_idx0",
+                  "header": "3 Course Pre-Theater",
+                  "description": "Classic Basics paired with Asian influences",
+                  "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic1.jpg",
+                  "offers": [
+                    {
+                      "time": "18:00",
+                      "price": "2400",
+                      "waitlist":false
+                    },
+                    {
+                      "time": "19:00",
+                      "price": "3600",
+                      "waitlist":false
+                    }
+                  ]
+                }
+              ],
+              "slots": []
+            }
 
 
 # GET /restaurants/{slug}/payment_tokens
