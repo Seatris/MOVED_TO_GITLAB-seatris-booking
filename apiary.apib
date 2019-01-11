@@ -506,6 +506,7 @@ Data needed to tokenize creditcards. Response depends on provider.
               "payment_id": "9234902"
             }
 
+
 # POST /restaurants/{slug}/slot-locks
 reserve a slot for the booking process
 
@@ -525,6 +526,19 @@ reserve a slot for the booking process
               "id": "4711"
             }
 
+
+# DELETE /restaurants/{slug}/slot-locks
+remove a slot-lock
+
++ Parameters
+    + slug: demo (string, required)
+    + id: 4711 (number, required)
+
++ Response 200 (application/json)
+
+    + Body
+
+            {}
 
 
 # POST /restaurants/{slug}/bookings
