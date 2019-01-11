@@ -506,6 +506,27 @@ Data needed to tokenize creditcards. Response depends on provider.
               "payment_id": "9234902"
             }
 
+# POST /restaurants/{slug}/slot-locks
+reserve a slot for the booking process
+
++ Parameters
+    + slug: demo (string, required)
+    + num_guests: 3 (number, required)
+    + time: "12:15" (string, required)
+    + date: "2019-08-01" (string, required)
+    + floor_id: 193304 (number, required)
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+              "success":true,
+              "id": "4711"
+            }
+
+
+
 # POST /restaurants/{slug}/bookings
 
 + Parameters
