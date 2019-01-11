@@ -517,6 +517,15 @@ reserve a slot for the booking process
     + date: "2019-08-01" (string, required)
     + floor_id: 193304 (number, required)
 
++ Request (application/json)
+
+            {
+              "num_guests": 3,
+              "date": "2019-08-01",
+              "time": "12:15",
+              "floor_id": 193304
+            }
+
 + Response 200 (application/json)
 
     + Body
@@ -527,12 +536,16 @@ reserve a slot for the booking process
             }
 
 
-# DELETE /restaurants/{slug}/slot-locks
+# DELETE /restaurants/{slug}/slot-locks/{id}
 remove a slot-lock
 
 + Parameters
     + slug: demo (string, required)
     + id: 4711 (number, required)
+
++ Request (application/json)
+
+            {}
 
 + Response 200 (application/json)
 
