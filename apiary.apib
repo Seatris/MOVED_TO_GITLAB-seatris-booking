@@ -580,6 +580,7 @@ remove a slot-lock
         "restaurant_newsletter": true (boolean, required)
         "locale": "en" (string, required) - the locale (de or en)
       } (User, required)
+    + slot-lock-id: 4711 (number, optional) - ID of the slot-lock of this booking
 
 + Request (application/json)
 
@@ -601,7 +602,8 @@ remove a slot-lock
                 "restrictions": "Veganer",
                 "restaurant_newsletter": true,
                 "locale": "en"
-              }
+              },
+              "slot-lock-id": 4711
           }
 + Response 200 (application/json)
 
