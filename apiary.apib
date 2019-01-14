@@ -222,8 +222,8 @@ Data for restaurants, all needed for the guest booking.
 + Parameters
     + slug: `demo` (string, required) - ID of the Restaurant in the form of a slug
     + persons: 3 (number, required) - the number of persons
-    + start_date: `2018-12-01` (string, required) - Date in form of 'YY-MM-DD' to start the search
-    + end_date: `2018-12-31` (string, required) - Date in form of 'YY-MM-DD' where search ends
+    + start_date: `2019-01-01` (string, required) - Date in form of 'YY-MM-DD' to start the search
+    + end_date: `2019-01-31` (string, required) - Date in form of 'YY-MM-DD' where search ends
     + floor_id: 7 (number, optional)
     + shift_category_id: 2 (number, optional)
     + event_id: 'abc_event' (string, optional) - Id or slug? of event, used to filter availabilities to this event only
@@ -246,37 +246,37 @@ Data for restaurants, all needed for the guest booking.
     + Body
 
             [
-              "2018-12-01",
-              "2018-12-02",
-              "2018-12-03",
-              "2018-12-04",
-              "2018-12-05",
-              "2018-12-06",
-              "2018-12-07",
-              "2018-12-08",
-              "2018-12-09",
-              "2018-12-10",
-              "2018-12-11",
-              "2018-12-12",
-              "2018-12-13",
-              "2018-12-14",
-              "2018-12-15",
-              "2018-12-16",
-              "2018-12-17",
-              "2018-12-18",
-              "2018-12-19",
-              "2018-12-20",
-              "2018-12-21",
-              "2018-12-22",
-              "2018-12-23",
-              "2018-12-24",
-              "2018-12-25",
-              "2018-12-26",
-              "2018-12-27",
-              "2018-12-28",
-              "2018-12-29",
-              "2018-12-30",
-              "2018-12-31"
+              "2019-01-01",
+              "2019-01-02",
+              "2019-01-03",
+              "2019-01-04",
+              "2019-01-05",
+              "2019-01-06",
+              "2019-01-07",
+              "2019-01-08",
+              "2019-01-09",
+              "2019-01-10",
+              "2019-01-11",
+              "2019-01-12",
+              "2019-01-13",
+              "2019-01-14",
+              "2019-01-15",
+              "2019-01-16",
+              "2019-01-17",
+              "2019-01-18",
+              "2019-01-19",
+              "2019-01-20",
+              "2019-01-21",
+              "2019-01-22",
+              "2019-01-23",
+              "2019-01-24",
+              "2019-01-25",
+              "2019-01-26",
+              "2019-01-27",
+              "2019-01-28",
+              "2019-01-29",
+              "2019-01-30",
+              "2019-01-31"
             ]
 
 # GET /restaurants/{slug}/availabilities
@@ -301,7 +301,7 @@ Data for restaurants, all needed for the guest booking.
     + Body
 
             {
-              "date": "2018-12-15",
+              "date": "2019-01-15",
               "floor_id": 1,
               "shift_category_id": 1,
               "events": [
@@ -402,7 +402,7 @@ filtered availability search, permalink: /demo/event/demo_ev_0_1_idx0
     + Body
 
             {
-              "date": "2018-12-15",
+              "date": "2019-01-15",
               "floor_id": 1,
               "shift_category_id": 1,
               "events": [
@@ -444,7 +444,7 @@ filtered availability search, permalink: /demo/event/demo_ev_0_2_idx0
     + Body
 
             {
-              "date": "2018-12-15",
+              "date": "2019-01-15",
               "floor_id": 2,
               "shift_category_id": 2,
               "events": [
@@ -588,7 +588,7 @@ remove a slot-lock
               "num_adults": 3,
               "num_infants": 2,
               "num_children": 1,
-              "date": "2018-12-16",
+              "date": "2019-01-16",
               "time": "20:15",
               "is_request": false,
               "floor_id": 193304,
