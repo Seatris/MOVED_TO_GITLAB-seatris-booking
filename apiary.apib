@@ -508,7 +508,8 @@ Data needed to tokenize creditcards. Response depends on provider.
 
 
 # POST /restaurants/{slug}/slot-locks
-reserve a slot for the booking process
+reserve a slot for the booking process.
+HTTP 200 wenn success, 404 wenn success: false
 
 + Parameters
     + slug: demo (string, required)
