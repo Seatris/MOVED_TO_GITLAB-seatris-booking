@@ -290,8 +290,10 @@ Data for restaurants, all needed for the guest booking.
 
 + Response 200 (application/json)
 
-    + Attributes (object)
+    + Attributes (array[Availabilities])
         + date: "2019-08-01" (string) - date of availabilities
+        + floor_id: 1 (number) - floor_id of availabilities
+        + shift_category_id: 1 (number) - shift_category_id of availabilities
         + events: []  (array[Event]) - Array of Events
         + slots: [] (array[Timeslot]) - Array of Timeslots
 
