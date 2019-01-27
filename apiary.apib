@@ -292,8 +292,8 @@ Data for restaurants, all needed for the guest booking.
 
     + Attributes (array[Availabilities])
         + date: "2019-08-01" (string) - date of availabilities
-        + floor_id: 1 (number) - floor_id of availabilities
-        + shift_category_id: 1 (number) - shift_category_id of availabilities
+        + floor_id: 1 (number)
+        + shift_category_id: 1 (number)
         + events: []  (array[Event]) - Array of Events
         + slots: [] (array[Timeslot]) - Array of Timeslots
 
@@ -415,7 +415,6 @@ Data for restaurants, all needed for the guest booking.
               }
             ]
 
-
 # GET /restaurants/{slug}/availabilities?event_id=demo_ev_0_1_idx0
 filtered availability search, permalink: /demo/event/demo_ev_0_1_idx0
 
@@ -430,35 +429,34 @@ filtered availability search, permalink: /demo/event/demo_ev_0_1_idx0
 
     + Body
 
-            {
-              "date": "2019-01-15",
-              "events": [
-                {
-                  "id": "demo_ev_0_1_idx0",
-                  "header": "1 Course Pre-Theater",
-                  "description": "12 Classic Basics paired with Asian influences",
-                  "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic1.jpg",
-                  "offers": [
-                    {
-                      "waitlist": false,
-                      "time": "21:00",
-                      "floor_id": 1,
-                      "shift_category_id": 1,
-                      "price": "2400"
-                    },
-                    {
-                      "waitlist": false,
-                      "time": "22:00",
-                      "floor_id": 1,
-                      "shift_category_id": 1,
-                      "price": "3600"
-                    }
-                  ]
-                }
-              ],
-              "slots": []
-            }
-
+            [
+              {
+                "date": "2019-01-15",
+                "floor_id": 1,
+                "shift_category_id": 1,
+                "events": [
+                  {
+                    "id": "demo_ev_0_1_idx0",
+                    "header": "1 Course Pre-Theater",
+                    "description": "12 Classic Basics paired with Asian influences",
+                    "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic1.jpg",
+                    "offers": [
+                      {
+                        "waitlist": false,
+                        "time": "21:00",
+                        "price": "2400"
+                      },
+                      {
+                        "waitlist": false,
+                        "time": "22:00",
+                        "price": "3600"
+                      }
+                    ]
+                  }
+                ],
+                "slots": []
+              }
+            ]
 
 # GET /restaurants/{slug}/availabilities?event_id=demo_ev_0_2_idx0
 filtered availability search, permalink: /demo/event/demo_ev_0_2_idx0
@@ -474,36 +472,34 @@ filtered availability search, permalink: /demo/event/demo_ev_0_2_idx0
 
     + Body
 
-            {
-              "date": "2019-01-15",
-              "events": [
-                {
-                  "id": "demo_ev_0_2_idx0",
-                  "header": "2 Course Pre-Theater",
-                  "description": "12+2 Classic Basics paired with Asian influences",
-                  "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic4.jpg",
-                  "offers": [
-                    {
-                      "waitlist": false,
-                      "time": "18:00",
-                      "floor_id": 2,
-                      "shift_category_id": 2,
-                      "price": "2400"
-                    },
-                    {
-                      "waitlist": false,
-                      "time": "19:00",
-                      "floor_id": 2,
-                      "shift_category_id": 2,
-                      "price": "3600"
-                    }
-                  ]
-                }
-              ],
-              "slots": []
-            }
-
-
+            [
+              {
+                "date": "2019-01-15",
+                "floor_id": 2,
+                "shift_category_id": 2,
+                "events": [
+                  {
+                    "id": "demo_ev_0_2_idx0",
+                    "header": "2 Course Pre-Theater",
+                    "description": "12+2 Classic Basics paired with Asian influences",
+                    "image_url": "https://finedining-production.s3.amazonaws.com/mock/event_pic4.jpg",
+                    "offers": [
+                      {
+                        "waitlist": false,
+                        "time": "18:00",
+                        "price": "2400"
+                      },
+                      {
+                        "waitlist": false,
+                        "time": "19:00",
+                        "price": "3600"
+                      }
+                    ]
+                  }
+                ],
+                "slots": []
+              }
+            ]
 
 # GET /restaurants/{slug}/payment_tokens
 Data needed to tokenize creditcards. Response depends on provider.
