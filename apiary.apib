@@ -35,6 +35,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 + booking_time_in_advance_minutes (number) - how many minutes a booking must be done before shift begin, -1 if there is no limit
 + guest_notes_for_availablity_page (string)
 + not_requestable_message_for_availablity_page (string)
++ min_party_size_for_noshow (boolean) - minimun number of persons for a single booking for a payment
 
 ## Timeslot (object)
 + time: "12:00" (string) - time formated
@@ -160,6 +161,7 @@ Data for restaurants, all needed for the guest booking.
                   "cancellation_limit_text": "Cancellations can be made free of charge until 3 PM on the booked date. Cancellations made after this time and when the table cannot be refilled will be charged EUR 80 per person.<br>&nbsp;<br>Your card will not be charged at this time. All credit card data entered onto this site is encrypted and secured with verified payment providers.",
                   "cancellation_limit_for_groups_text": "14:00 am Tag vor der Buchung",
                   "booking_time_in_advance_minutes": -1,
+                  "min_party_size_for_noshow": 5,
                   "guest_notes_for_availablity_page": "We take bookings for the above times only. We take walk-ins for other times; first come first served.",
                   "not_requestable_message_for_availablity_page": "The restaurant is currently not taking bookings"
                 },
@@ -185,6 +187,7 @@ Data for restaurants, all needed for the guest booking.
                   "cancellation_limit_for_groups_text": "",
                   "booking_time_in_advance_minutes": -1,
                   "guest_notes_for_availablity_page": "",
+                  "min_party_size_for_noshow": 3,
                   "not_requestable_message_for_availablity_page": ""
                 },
                 {
@@ -197,7 +200,8 @@ Data for restaurants, all needed for the guest booking.
                   "cancellation_limit_for_groups_text": "",
                   "booking_time_in_advance_minutes": -1,
                   "guest_notes_for_availablity_page": "",
-                  "not_requestable_message_for_availablity_page": ""
+                  "not_requestable_message_for_availablity_page": "",
+                  "min_party_size_for_noshow": 4
                 }
               ],
               "events": [
