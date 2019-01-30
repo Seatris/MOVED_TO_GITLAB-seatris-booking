@@ -26,7 +26,7 @@ Seatris Guest Booking is an API allowing users to make reservations
 ## ShiftTemplate (object)
 
 + id (number) - Id of template
-+ floor_id (number) - Id of floor
++ floor_id (number) - Id of Floor
 + shift_category_id (number) - Id of ShiftCategory
 + noshow_fee_currency (string) - Currency for noshow fee
 + noshow_fee_cents (number) - Amount for noshow fee (in cents)
@@ -296,10 +296,10 @@ Data for restaurants, all needed for the guest booking.
 
     + Attributes (array)
         + date: "2019-08-01" (string) - date of availabilities
-        + floor_id: 1 (number)
-        + shift_category_id: 1 (number)
         + events: []  (array[Event]) - Array of Events
         + slots: [] (array[Timeslot]) - Array of Timeslots
+        + floor_id: 123 (number) - Id of floor
+        + shift_category_id: 1 (number) - Id of shift-category
 
     + Body
 
