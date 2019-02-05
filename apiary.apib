@@ -545,7 +545,7 @@ Data needed to tokenize creditcards. Response depends on provider.
             }
 
 
-# POST /restaurants/{slug}/slot-locks
+# POST /restaurants/{slug}/slot_locks
 reserve a slot for the booking process.
 HTTP 201 wenn success, 404 wenn success: false
 
@@ -575,8 +575,8 @@ HTTP 201 wenn success, 404 wenn success: false
             }
 
 
-# DELETE /restaurants/{slug}/slot-locks/{id}
-remove a slot-lock
+# DELETE /restaurants/{slug}/slot_locks/{id}
+remove a slot lock
 
 + Parameters
     + slug: demo (string, required)
