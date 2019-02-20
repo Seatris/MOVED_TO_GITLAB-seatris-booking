@@ -32,8 +32,6 @@ Seatris Guest Booking is an API allowing users to make reservations
 + noshow_fee_cents (number) - Amount for noshow fee (in cents)
 + cancellation_limit_text (string) - Hint text for cancellations
 + cancellation_limit_for_groups_text (string) - Hint text for cancellations for groups
-+ guest_notes_for_availablity_page (string)
-+ not_requestable_message_for_availablity_page (string)
 + min_party_size_for_noshow (boolean) - minimun number of persons for a single booking for a payment
 
 ## Timeslot (object)
@@ -163,9 +161,7 @@ Data for restaurants, all needed for the guest booking.
                   "noshow_fee_cents": 4000,
                   "cancellation_limit_text": "Cancellations can be made free of charge until 3 PM on the booked date. Cancellations made after this time and when the table cannot be refilled will be charged EUR 80 per person.<br>&nbsp;<br>Your card will not be charged at this time. All credit card data entered onto this site is encrypted and secured with verified payment providers.",
                   "cancellation_limit_for_groups_text": "14:00 am Tag vor der Buchung",
-                  "min_party_size_for_noshow": 5,
-                  "guest_notes_for_availablity_page": "We take bookings for the above times only. We take walk-ins for other times; first come first served.",
-                  "not_requestable_message_for_availablity_page": "The restaurant is currently not taking bookings"
+                  "min_party_size_for_noshow": 5
                 },
                 {
                   "id": 2,
@@ -175,8 +171,7 @@ Data for restaurants, all needed for the guest booking.
                   "noshow_fee_cents": 0,
                   "cancellation_limit_text": "Cancellations can be made free of charge until 3 PM on the booked date. Cancellations made after this time and when the table cannot be refilled will be charged EUR 80 per person.<br>&nbsp;<br>Your card will not be charged at this time. All credit card data entered onto this site is encrypted and secured with verified payment providers.",
                   "cancellation_limit_for_groups_text": "",
-                  "guest_notes_for_availablity_page": "",
-                  "not_requestable_message_for_availablity_page": ""
+                  "min_party_size_for_noshow": 4
                 },
                 {
                   "id": 3,
@@ -186,9 +181,7 @@ Data for restaurants, all needed for the guest booking.
                   "noshow_fee_cents": 5000,
                   "cancellation_limit_text": "Cancellations can be made free of charge until 3 PM on the booked date. Cancellations made after this time and when the table cannot be refilled will be charged EUR 80 per person.<br>&nbsp;<br>Your card will not be charged at this time. All credit card data entered onto this site is encrypted and secured with verified payment providers.",
                   "cancellation_limit_for_groups_text": "",
-                  "guest_notes_for_availablity_page": "",
-                  "min_party_size_for_noshow": 3,
-                  "not_requestable_message_for_availablity_page": ""
+                  "min_party_size_for_noshow": 3
                 },
                 {
                   "id": 4,
@@ -198,8 +191,6 @@ Data for restaurants, all needed for the guest booking.
                   "noshow_fee_cents": 8000,
                   "cancellation_limit_text": "Cancellations can be made free of charge until 3 PM on the booked date. Cancellations made after this time and when the table cannot be refilled will be charged EUR 80 per person.<br>&nbsp;<br>Your card will not be charged at this time. All credit card data entered onto this site is encrypted and secured with verified payment providers.",
                   "cancellation_limit_for_groups_text": "",
-                  "guest_notes_for_availablity_page": "",
-                  "not_requestable_message_for_availablity_page": "",
                   "min_party_size_for_noshow": 4
                 }
               ],
