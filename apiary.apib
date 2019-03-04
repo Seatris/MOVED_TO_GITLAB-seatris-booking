@@ -277,7 +277,7 @@ Data for restaurants, all needed for the guest booking.
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
     + persons: 2 (number, required) - the number of persons
-    + date: `2019-08-01` (string, optional) - Date in form of 'YY-MM-DD' from which to load the slots. if date is today all from retaurant now are returned
+    + date: `2019-08-01` (string, required) - Date in form of 'YY-MM-DD' from which to load the slots. if date is today all from retaurant now are returned
     + floor_id: 123 (number, optional) - Id of floor
     + shift_category_id: 2 (number, optional) - Id of shift-category, used as filter
     + event_id: 'abc_event' (string, optional) - Id or slug? of event, used to filter availabilities to this event only
@@ -517,6 +517,23 @@ Data needed to tokenize creditcards. Response depends on provider.
               "provider": "Adyen",
               "generationtime": "2019-09-30T17:44:04+00:00",
               "cse_public_key": "10001|995CF0D3A9BDCBE05AE5F377D9B791E6F19DB4F4224079A71A1E00C84B80EB19D876DA98C5ED111F736D5438E78EB516A884B005895A7B5C4BE439DB5D346B3EAAC64CE3BFDAB8EE124CF8BD6423B472FC08C079C0C6A1570426B22CD7F6520BEA03F9ED816106895D9158E68D805719279F2FD78F52A12D648AF7D078C068F0662DCAC13473236FAC77D112695702FD8073A90BBDB72799502AB5DDCB28C97D8503B71D399F4A92559A59C2B5EFC28F9A323BE04D95893E3324A27091D01EF3EEDBD8905A7B27A05D24498A1B43F042E97CD5E07FC7168CA2300976085A66A8FAB1E79C20D92038E36D808865703BD80F51A928C4DEAC3DCD7D70E21983B40D"
+            }
+
+# GET /restaurants/{slug}/payment_tokens?provider=braintree
+Data needed to tokenize creditcards. Response depends on provider.
+
++ Parameters
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+              "provider": "Braintree",
+              "client_token": "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiI4YzZmNjJkZjM4NGFmMTc4MDVmODQwZWY4Mzg1ZjJiZTg5OGI5NmIxYmU4YzViZDhmYTUxOTBmZWIxMGJhYjhifGNyZWF0ZWRfYXQ9MjAxOS0wMi0yMVQxMzo0Njo1NS45MjY5OTM4NzArMDAwMFx1MDAyNm1lcmNoYW50X2lkPTc2NndxM3E0M3l5MzJranRcdTAwMjZwdWJsaWNfa2V5PW1kY214M215cXBrZjRqODMiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvNzY2d3EzcTQzeXkzMmtqdC9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJncmFwaFFMIjp7InVybCI6Imh0dHBzOi8vcGF5bWVudHMuc2FuZGJveC5icmFpbnRyZWUtYXBpLmNvbS9ncmFwaHFsIiwiZGF0ZSI6IjIwMTgtMDUtMDgifSwiY2hhbGxlbmdlcyI6W10sImVudmlyb25tZW50Ijoic2FuZGJveCIsImNsaWVudEFwaVVybCI6Imh0dHBzOi8vYXBpLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb206NDQzL21lcmNoYW50cy83NjZ3cTNxNDN5eTMya2p0L2NsaWVudF9hcGkiLCJhc3NldHNVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImF1dGhVcmwiOiJodHRwczovL2F1dGgudmVubW8uc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFuYWx5dGljcyI6eyJ1cmwiOiJodHRwczovL29yaWdpbi1hbmFseXRpY3Mtc2FuZC5zYW5kYm94LmJyYWludHJlZS1hcGkuY29tLzc2NndxM3E0M3l5MzJranQifSwidGhyZWVEU2VjdXJlRW5hYmxlZCI6dHJ1ZSwicGF5cGFsRW5hYmxlZCI6dHJ1ZSwicGF5cGFsIjp7ImRpc3BsYXlOYW1lIjoibm9jb21wIiwiY2xpZW50SWQiOm51bGwsInByaXZhY3lVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vcHAiLCJ1c2VyQWdyZWVtZW50VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3RvcyIsImJhc2VVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFzc2V0c1VybCI6Imh0dHBzOi8vY2hlY2tvdXQucGF5cGFsLmNvbSIsImRpcmVjdEJhc2VVcmwiOm51bGwsImFsbG93SHR0cCI6dHJ1ZSwiZW52aXJvbm1lbnROb05ldHdvcmsiOnRydWUsImVudmlyb25tZW50Ijoib2ZmbGluZSIsInVudmV0dGVkTWVyY2hhbnQiOmZhbHNlLCJicmFpbnRyZWVDbGllbnRJZCI6Im1hc3RlcmNsaWVudDMiLCJiaWxsaW5nQWdyZWVtZW50c0VuYWJsZWQiOnRydWUsIm1lcmNoYW50QWNjb3VudElkIjoibm9jb21wIiwiY3VycmVuY3lJc29Db2RlIjoiRVVSIn0sIm1lcmNoYW50SWQiOiI3NjZ3cTNxNDN5eTMya2p0IiwidmVubW8iOiJvZmYifQ=="
             }
 
 
