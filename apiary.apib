@@ -638,7 +638,7 @@ remove a slot lock
                 "first_name": "Hannes",
                 "last_name": "Mustermann",
                 "email": "mustermann@example.com",
-used                 "phone": "+491792404223",
+                "phone": "+491792404223",
                 "restaurant_newsletter": true,
                 "locale": "en"
               },
@@ -654,6 +654,34 @@ used                 "phone": "+491792404223",
               "success":true,
               "id":110504,
               "cancellation_token":"mut6FvW1pQtzwXYpeVsQ"
+            }
+
+# GET /restaurants/{slug}/cancel/{token_or_booking_id}
++ Parameters
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+    + token: 222 (number, required) - token or booking ID of the booking to be cancelled
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + name: "NOBELHART & SCHMUTZIG" (string)
+        + floor_name: "main floor" (string)
+        + date: "2019-04-23" (string)
+        + time: "18:00" (string)
+        + adults: 2 (number)
+        + children: 0 (number)
+        + infants: 0 (number)
+
+    + Body
+    
+            {
+              "name": "NOBELHART & SCHMUTZIG",
+              "floor_name": "main floor",
+              "date": "2019-04-23",
+              "time": "18:00",
+              "adults": "2"
+              "children": "0"
+              "infants": "0"
             }
 
 # GET /restaurants/{slug}/param_test
