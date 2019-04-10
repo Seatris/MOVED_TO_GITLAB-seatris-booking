@@ -659,7 +659,7 @@ remove a slot lock
 # GET /restaurants/{slug}/bookings/{booking_id}
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
-    + booking_id: 222 (number, required) - ID of the booking to be cancelled
+    + booking_id: 222 (number, required) - encrypted ID of the booking to be cancelled
 
 + Response 200 (application/json)
 
@@ -685,6 +685,22 @@ remove a slot lock
               "num_infants": 0,
               "is_request": false
             }
+
+
+# DELETE /restaurants/{slug}/bookings/{booking_id}
+cancel a booking
+
++ Parameters
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+    + booking_id: 222 (number, required) - encrypted ID of the booking to be cancelled
+
++ Request (application/json)
+
+            {
+            }
+
++ Response 204 (application/json)
+
 
 # GET /restaurants/{slug}/param_test
 Data needed to tokenize creditcards. Response depends on provider.
