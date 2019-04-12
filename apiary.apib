@@ -555,8 +555,15 @@ Data needed to tokenize creditcards. Response depends on provider.
     + Body
 
             {
-              "success":true,
               "payment_id": "9234902"
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+              "error_message": "There was an error with your credit card"
             }
 
 
