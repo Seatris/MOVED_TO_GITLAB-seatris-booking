@@ -568,8 +568,8 @@ Data needed to tokenize creditcards. Response depends on provider.
 
 
 # POST /restaurants/{slug}/slot_locks
-reserve a slot for the booking process.
-HTTP 201 wenn success, 404 wenn success: false
+Reserve a slot for the booking process.
+HTTP 201 on success, 404 on success: false
 
 + Parameters
     + slug: demo (string, required)
@@ -598,7 +598,7 @@ HTTP 201 wenn success, 404 wenn success: false
 
 
 # DELETE /restaurants/{slug}/slot_locks/{id}
-remove a slot lock
+Remove a slot lock
 
 + Parameters
     + slug: demo (string, required)
@@ -613,6 +613,8 @@ remove a slot lock
 
 
 # PUT /restaurants/{slug}/bookings/{booking_id}
+Edit an existing booking
+
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
     + booking_id: 222 (number, required) - encrypted ID of the booking to be cancelled
     + notes_by_guest: "These are my notes" (string, optional) - Booking notes by guest
@@ -636,10 +638,11 @@ remove a slot lock
     + Body
 
             {
-              "error_message": "There was an error editediting your booking"
+              "error_message": "There was an error editing your booking"
             }
 
 # POST /restaurants/{slug}/bookings
+Create a new booking
 
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
@@ -698,6 +701,9 @@ remove a slot lock
             }
 
 # GET /restaurants/{slug}/bookings/{booking_id}
+Get properties of an existing booking.
+Requested by the user when he wants to edit or cancel the booking and for the payment request.
+
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
     + booking_id: 222 (number, required) - encrypted ID of the booking to be cancelled
@@ -736,6 +742,9 @@ remove a slot lock
               "notes_by_guest": "uhu oho aha",
               "needs_payment": true,
               "is_editable": true,
+              "is_cancelable": true,
+              "noshow_fee_cents": 100,
+              "cancellation_limit_text": "10:00 AM on the arrival date",
               "user" : {
                 "first_name": "Hannes",
                 "last_name": "Mustermann",
