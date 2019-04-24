@@ -274,13 +274,13 @@ Data for restaurants, all needed for the guest booking.
             ]
 
 # GET /restaurants/{slug}/availabilities
- Returns a list of availabilities as time slots. There are optional filters like floor_id 
- and shift_category_id, but if they are not set, every floor and every shift is returned for a 
- certain day. if paramater first_availability is set to true, the search continues to the next day until a 
- first available slot is found without a waitlist entry. In that case date is just a starting point, 
- the result may be in the future, but netherthe less still all floors and shifts are returned. 
+ Returns a list of availabilities as time slots. There are optional filters like floor_id
+ and shift_category_id, but if they are not set, every floor and every shift is returned for a
+ certain day. if paramater first_availability is set to true, the search continues to the next day until a
+ first available slot is found without a waitlist entry. In that case date is just a starting point,
+ the result may be in the future, but netherthe less still all floors and shifts are returned.
  Floors and shifts are sorted by priority.
- 
+
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
     + persons: 2 (number, required) - the number of persons
@@ -299,6 +299,7 @@ Data for restaurants, all needed for the guest booking.
         + slots: [] (array[Timeslot]) - Array of Timeslots
         + floor_id: 123 (number) - Id of floor
         + shift_category_id: 1 (number) - Id of shift-category
+        + shift_template_id: 357 (number) - Id of ShiftTemplate
 
     + Body
 
@@ -307,6 +308,7 @@ Data for restaurants, all needed for the guest booking.
                 "date": "2019-02-15",
                 "floor_id": 1,
                 "shift_category_id": 1,
+                "shift_template_id": 357,
                 "events": [
                   {
                     "id": "demo_ev_0_2_idx0",
@@ -400,6 +402,7 @@ Data for restaurants, all needed for the guest booking.
                 "date": "2019-02-15",
                 "floor_id": 1,
                 "shift_category_id": 2,
+                "shift_template_id": 42,
                 "events": [],
                 "slots": [
                   {
@@ -702,7 +705,7 @@ Requested by the user when he wants to edit or cancel the booking and for the pa
           } (User)
 
     + Body
-    
+
             {
               "date": "2019-04-23",
               "time": "18:00",
