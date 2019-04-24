@@ -626,6 +626,7 @@ Edit an existing booking
               "notes_by_guest": "These are my notes",
               "payment_id": 298889
         }
+
 + Response 200 (application/json)
 
     + Body
@@ -754,8 +755,8 @@ Requested by the user when he wants to edit or cancel the booking and for the pa
             }
 
 
-# DELETE /restaurants/{slug}/bookings/{booking_id}
-cancel a booking
+# PUT /restaurants/{slug}/bookings/{booking_id}/payment
+Cancel a booking
 
 + Parameters
     + slug: demo (string, required) - ID of the Restaurant in the form of a slug
@@ -766,7 +767,20 @@ cancel a booking
             {
             }
 
-+ Response 204 (application/json)
++ Response 200 (application/json)
+
+    + Body
+
+            {
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+              "error_message": "There was an error canceling your booking"
+            }
 
 
 # GET /restaurants/{slug}/param_test
