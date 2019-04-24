@@ -783,6 +783,34 @@ Cancel a booking
             }
 
 
+# PUT /restaurants/{slug}/bookings/{booking_id}/payment
+Add a payment to an existing booking
+
+    + slug: demo (string, required) - ID of the Restaurant in the form of a slug
+    + booking_id: 222 (number, required) - encrypted ID of the booking to be cancelled
+    + payment_id: 298889 (number, optional)
+
++ Request (application/json)
+
+        {
+              "payment_id": 298889
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+              "error_message": "There was an error editing your booking"
+            }
+
 # GET /restaurants/{slug}/param_test
 Data needed to tokenize creditcards. Response depends on provider.
 
