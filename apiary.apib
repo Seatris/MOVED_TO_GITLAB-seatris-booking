@@ -718,10 +718,12 @@ Requested by the user when he wants to edit or cancel the booking and for the pa
         + num_adults: 3 (number) - How many adults
         + num_infants: 2 (number) - How many infants
         + num_children: 1 (number) - How many children
-        + is_request: false (boolean)
-        + notes_by_guest: "uhu" (string)
-        + needs_payment: true (boolean) - Shall we show the payment request option?
+        + notes_by_guest: "uhu" (string) - Booking notes made by the guest
+        + payment_requested: true (boolean) - Does the booking need a payment? / Shall we show the payment request option?
         + is_editable: true (boolean) - Can the booking be edited?
+        + is_cancelable: true (boolean) - Is it (still) possible to cancel the booking,
+        + noshow_fee_cents: 100 (number) - Amount for noshow fee (in cents),
+        + cancellation_limit_text: "10:00 AM on the arrival date"  (string) - Hint text for cancellations,
         + user: "user" : {
             "first_name": "Martin" (string, required) - The first name of the main person,
             "last_name": "Wöginger" (string, required),
@@ -742,7 +744,6 @@ Requested by the user when he wants to edit or cancel the booking and for the pa
               "payment_requested": true,
               "is_editable": true,
               "is_cancelable": true,
-              "is_late_cancel": true,
               "noshow_fee_cents": 100,
               "cancellation_limit_text": "10:00 AM on the arrival date",
               "user" : {
